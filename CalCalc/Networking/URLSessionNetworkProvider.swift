@@ -23,7 +23,9 @@ class URLSessionNetworkProvider: NetworkProvider {
             DispatchQueue.main.async {
                 guard let data = data, let response = response as? HTTPURLResponse else {
                     if let error = error as NSError? {
-                        if error.domain == NSURLErrorDomain && error.code < -1001 && error.code > -1011  {
+                        if error.domain == NSURLErrorDomain && error.code == -999 {
+                            // Do nothing - task is cancelled
+                        } else if error.domain == NSURLErrorDomain && error.code < -1001 && error.code > -1011  {
                             dataHandler(.failure(.noConnection))
                         } else {
                             dataHandler(.failure(.error(error)))
