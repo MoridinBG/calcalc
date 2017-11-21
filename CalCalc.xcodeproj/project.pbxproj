@@ -23,6 +23,8 @@
 		00E519341FC4D89D00EF5935 /* AuthTokenUpdated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5192F1FC4D89D00EF5935 /* AuthTokenUpdated.swift */; };
 		00E519351FC4D89D00EF5935 /* TypedNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E519301FC4D89D00EF5935 /* TypedNotification.swift */; };
 		00E519371FC4D8CF00EF5935 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E519361FC4D8CF00EF5935 /* Logger.swift */; };
+		00E5193B1FC4DBC400EF5935 /* UIViewController+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5193A1FC4DBC400EF5935 /* UIViewController+Instantiate.swift */; };
+		00E5193D1FC4DBFE00EF5935 /* UIViewController+Id.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5193C1FC4DBFE00EF5935 /* UIViewController+Id.swift */; };
 		BEA01845848515890A55A9D8 /* Pods_CalCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		00E5192F1FC4D89D00EF5935 /* AuthTokenUpdated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthTokenUpdated.swift; sourceTree = "<group>"; };
 		00E519301FC4D89D00EF5935 /* TypedNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypedNotification.swift; sourceTree = "<group>"; };
 		00E519361FC4D8CF00EF5935 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		00E5193A1FC4DBC400EF5935 /* UIViewController+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Instantiate.swift"; sourceTree = "<group>"; };
+		00E5193C1FC4DBFE00EF5935 /* UIViewController+Id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Id.swift"; sourceTree = "<group>"; };
 		187530A7C4FB594136A77DC3 /* Pods-CalCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.debug.xcconfig"; sourceTree = "<group>"; };
 		667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9ADC66898E21AEFACF8637 /* Pods-CalCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 		00E518D71FC4BFAF00EF5935 /* CalCalc */ = {
 			isa = PBXGroup;
 			children = (
+				00E519381FC4DB9200EF5935 /* ViewControllers */,
 				00E519281FC4D87A00EF5935 /* Utilities */,
 				00E519151FC4D84E00EF5935 /* Networking */,
 				00E518D81FC4BFAF00EF5935 /* AppDelegate.swift */,
@@ -149,6 +154,7 @@
 		00E519281FC4D87A00EF5935 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				00E519391FC4DBA500EF5935 /* Extensions */,
 				00E519291FC4D89D00EF5935 /* Notifications */,
 				00E519361FC4D8CF00EF5935 /* Logger.swift */,
 			);
@@ -179,6 +185,22 @@
 				00E5192F1FC4D89D00EF5935 /* AuthTokenUpdated.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		00E519381FC4DB9200EF5935 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		00E519391FC4DBA500EF5935 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				00E5193A1FC4DBC400EF5935 /* UIViewController+Instantiate.swift */,
+				00E5193C1FC4DBFE00EF5935 /* UIViewController+Id.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		69FC2274CF101CA4A28E3F9F /* Pods */ = {
@@ -372,8 +394,10 @@
 			files = (
 				00E519201FC4D84E00EF5935 /* Endpoint+URLRequest.swift in Sources */,
 				00E519341FC4D89D00EF5935 /* AuthTokenUpdated.swift in Sources */,
+				00E5193B1FC4DBC400EF5935 /* UIViewController+Instantiate.swift in Sources */,
 				00E518DB1FC4BFAF00EF5935 /* ViewController.swift in Sources */,
 				00E519351FC4D89D00EF5935 /* TypedNotification.swift in Sources */,
+				00E5193D1FC4DBFE00EF5935 /* UIViewController+Id.swift in Sources */,
 				00E519211FC4D84E00EF5935 /* Endpoint.swift in Sources */,
 				00E519271FC4D84E00EF5935 /* URLSessionNetworkProvider.swift in Sources */,
 				00E519251FC4D84E00EF5935 /* NetworkProvider.swift in Sources */,
