@@ -6,7 +6,7 @@ PODS:
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
   - Result (3.2.4)
-  - Toast-Swift (2.0.0)
+  - Toast-Swift (3.0.1)
   - XCGLogger (6.0.1):
     - XCGLogger/Core (= 6.0.1)
   - XCGLogger/Core (6.0.1):
@@ -17,22 +17,17 @@ DEPENDENCIES:
   - KeychainAccess (~> 3.1)
   - NMRangeSlider (from `https://github.com/muZZkat/NMRangeSlider.git`)
   - Result (~> 3.2)
-  - Toast-Swift (from `https://github.com/MoridinBG/Toast-Swift`)
+  - Toast-Swift (~> 3.0)
   - XCGLogger (~> 6.0)
 
 EXTERNAL SOURCES:
   NMRangeSlider:
     :git: https://github.com/muZZkat/NMRangeSlider.git
-  Toast-Swift:
-    :git: https://github.com/MoridinBG/Toast-Swift
 
 CHECKOUT OPTIONS:
   NMRangeSlider:
     :commit: 56e86760bfac4b0747cf1df55ed6669aff263855
     :git: https://github.com/muZZkat/NMRangeSlider.git
-  Toast-Swift:
-    :commit: 185cea4c57593cd997f5033e138ea6659ed72ba7
-    :git: https://github.com/MoridinBG/Toast-Swift
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: a0592bb636b10a9a1cf75d2b2c61144226226c84
@@ -40,9 +35,9 @@ SPEC CHECKSUMS:
   NMRangeSlider: 02bb205d0c7f9bea09b5cf00fbcbc2bc2e3e10ff
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  Toast-Swift: 5b2f8f720f7e78e48511f693df1f9c9a6e38a25a
+  Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
   XCGLogger: b4ca980580108cfeaf221afe158f5d89c1be22e0
 
-PODFILE CHECKSUM: 8957f308ae5facad57222a1f82914437de03536d
+PODFILE CHECKSUM: 82972497370eea1f3a5872174aca5b236ccf80aa
 
 COCOAPODS: 1.3.1

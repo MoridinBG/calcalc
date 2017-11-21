@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		00E518D91FC4BFAF00EF5935 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E518D81FC4BFAF00EF5935 /* AppDelegate.swift */; };
-		00E518DB1FC4BFAF00EF5935 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E518DA1FC4BFAF00EF5935 /* ViewController.swift */; };
-		00E518DE1FC4BFAF00EF5935 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E518DC1FC4BFAF00EF5935 /* Main.storyboard */; };
 		00E518E01FC4BFAF00EF5935 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00E518DF1FC4BFAF00EF5935 /* Assets.xcassets */; };
 		00E518E31FC4BFAF00EF5935 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E518E11FC4BFAF00EF5935 /* LaunchScreen.storyboard */; };
 		00E518EE1FC4BFAF00EF5935 /* CalCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E518ED1FC4BFAF00EF5935 /* CalCalcTests.swift */; };
@@ -25,6 +23,13 @@
 		00E519371FC4D8CF00EF5935 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E519361FC4D8CF00EF5935 /* Logger.swift */; };
 		00E5193B1FC4DBC400EF5935 /* UIViewController+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5193A1FC4DBC400EF5935 /* UIViewController+Instantiate.swift */; };
 		00E5193D1FC4DBFE00EF5935 /* UIViewController+Id.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5193C1FC4DBFE00EF5935 /* UIViewController+Id.swift */; };
+		00E519401FC4E55900EF5935 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5193F1FC4E55900EF5935 /* SignInViewController.swift */; };
+		00E519421FC4E56C00EF5935 /* SignInViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E519411FC4E56C00EF5935 /* SignInViewController.storyboard */; };
+		00E519441FC4EB2D00EF5935 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E519431FC4EB2D00EF5935 /* FormTextField.swift */; };
+		00E519461FC4EBEA00EF5935 /* StoryboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E519451FC4EBEA00EF5935 /* StoryboardController.swift */; };
+		00E519481FC4EC2C00EF5935 /* String+isEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E519471FC4EC2C00EF5935 /* String+isEmail.swift */; };
+		00E5194A1FC4EC6900EF5935 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E519491FC4EC6900EF5935 /* Constants.swift */; };
+		00E5194C1FC4ECBE00EF5935 /* Toast+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5194B1FC4ECBE00EF5935 /* Toast+Extensions.swift */; };
 		BEA01845848515890A55A9D8 /* Pods_CalCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,8 +46,6 @@
 /* Begin PBXFileReference section */
 		00E518D51FC4BFAF00EF5935 /* CalCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E518D81FC4BFAF00EF5935 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		00E518DA1FC4BFAF00EF5935 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		00E518DD1FC4BFAF00EF5935 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00E518DF1FC4BFAF00EF5935 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00E518E21FC4BFAF00EF5935 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00E518E41FC4BFAF00EF5935 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +64,13 @@
 		00E519361FC4D8CF00EF5935 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		00E5193A1FC4DBC400EF5935 /* UIViewController+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Instantiate.swift"; sourceTree = "<group>"; };
 		00E5193C1FC4DBFE00EF5935 /* UIViewController+Id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Id.swift"; sourceTree = "<group>"; };
+		00E5193F1FC4E55900EF5935 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		00E519411FC4E56C00EF5935 /* SignInViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInViewController.storyboard; sourceTree = "<group>"; };
+		00E519431FC4EB2D00EF5935 /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
+		00E519451FC4EBEA00EF5935 /* StoryboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardController.swift; sourceTree = "<group>"; };
+		00E519471FC4EC2C00EF5935 /* String+isEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isEmail.swift"; sourceTree = "<group>"; };
+		00E519491FC4EC6900EF5935 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		00E5194B1FC4ECBE00EF5935 /* Toast+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Toast+Extensions.swift"; sourceTree = "<group>"; };
 		187530A7C4FB594136A77DC3 /* Pods-CalCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.debug.xcconfig"; sourceTree = "<group>"; };
 		667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9ADC66898E21AEFACF8637 /* Pods-CalCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,8 +122,6 @@
 				00E519281FC4D87A00EF5935 /* Utilities */,
 				00E519151FC4D84E00EF5935 /* Networking */,
 				00E518D81FC4BFAF00EF5935 /* AppDelegate.swift */,
-				00E518DA1FC4BFAF00EF5935 /* ViewController.swift */,
-				00E518DC1FC4BFAF00EF5935 /* Main.storyboard */,
 				00E518DF1FC4BFAF00EF5935 /* Assets.xcassets */,
 				00E518E11FC4BFAF00EF5935 /* LaunchScreen.storyboard */,
 				00E518E41FC4BFAF00EF5935 /* Info.plist */,
@@ -157,6 +165,8 @@
 				00E519391FC4DBA500EF5935 /* Extensions */,
 				00E519291FC4D89D00EF5935 /* Notifications */,
 				00E519361FC4D8CF00EF5935 /* Logger.swift */,
+				00E519431FC4EB2D00EF5935 /* FormTextField.swift */,
+				00E519491FC4EC6900EF5935 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -190,6 +200,8 @@
 		00E519381FC4DB9200EF5935 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				00E5193E1FC4E54600EF5935 /* SignIn */,
+				00E519451FC4EBEA00EF5935 /* StoryboardController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -199,8 +211,19 @@
 			children = (
 				00E5193A1FC4DBC400EF5935 /* UIViewController+Instantiate.swift */,
 				00E5193C1FC4DBFE00EF5935 /* UIViewController+Id.swift */,
+				00E519471FC4EC2C00EF5935 /* String+isEmail.swift */,
+				00E5194B1FC4ECBE00EF5935 /* Toast+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		00E5193E1FC4E54600EF5935 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				00E5193F1FC4E55900EF5935 /* SignInViewController.swift */,
+				00E519411FC4E56C00EF5935 /* SignInViewController.storyboard */,
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 		69FC2274CF101CA4A28E3F9F /* Pods */ = {
@@ -306,9 +329,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E519421FC4E56C00EF5935 /* SignInViewController.storyboard in Resources */,
 				00E518E31FC4BFAF00EF5935 /* LaunchScreen.storyboard in Resources */,
 				00E518E01FC4BFAF00EF5935 /* Assets.xcassets in Resources */,
-				00E518DE1FC4BFAF00EF5935 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,20 +415,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E519401FC4E55900EF5935 /* SignInViewController.swift in Sources */,
+				00E519441FC4EB2D00EF5935 /* FormTextField.swift in Sources */,
+				00E519461FC4EBEA00EF5935 /* StoryboardController.swift in Sources */,
 				00E519201FC4D84E00EF5935 /* Endpoint+URLRequest.swift in Sources */,
 				00E519341FC4D89D00EF5935 /* AuthTokenUpdated.swift in Sources */,
 				00E5193B1FC4DBC400EF5935 /* UIViewController+Instantiate.swift in Sources */,
-				00E518DB1FC4BFAF00EF5935 /* ViewController.swift in Sources */,
 				00E519351FC4D89D00EF5935 /* TypedNotification.swift in Sources */,
 				00E5193D1FC4DBFE00EF5935 /* UIViewController+Id.swift in Sources */,
+				00E519481FC4EC2C00EF5935 /* String+isEmail.swift in Sources */,
 				00E519211FC4D84E00EF5935 /* Endpoint.swift in Sources */,
 				00E519271FC4D84E00EF5935 /* URLSessionNetworkProvider.swift in Sources */,
 				00E519251FC4D84E00EF5935 /* NetworkProvider.swift in Sources */,
 				00E519241FC4D84E00EF5935 /* Network.swift in Sources */,
 				00E518D91FC4BFAF00EF5935 /* AppDelegate.swift in Sources */,
+				00E5194C1FC4ECBE00EF5935 /* Toast+Extensions.swift in Sources */,
 				00E519371FC4D8CF00EF5935 /* Logger.swift in Sources */,
 				00E519261FC4D84E00EF5935 /* RequestError.swift in Sources */,
 				00E519321FC4D89D00EF5935 /* AutoLoginRequest.swift in Sources */,
+				00E5194A1FC4EC6900EF5935 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,14 +456,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		00E518DC1FC4BFAF00EF5935 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				00E518DD1FC4BFAF00EF5935 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		00E518E11FC4BFAF00EF5935 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

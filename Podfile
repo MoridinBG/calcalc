@@ -7,7 +7,7 @@ def shared_pods
     pod 'Result', '~> 3.2'
     pod 'KeychainAccess', '~> 3.1'
 
-    pod 'Toast-Swift', :git => 'https://github.com/MoridinBG/Toast-Swift'
+    pod 'Toast-Swift', '~> 3.0'
     pod 'NMRangeSlider', :git => 'https://github.com/muZZkat/NMRangeSlider.git'
 end
 

@@ -9,6 +9,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 import XCGLogger
+import Toast_Swift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         XCGLogger.setupAppLogging()
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().enableAutoToolbar = true
+        
+        setupUI()
         
         return true
     }
@@ -49,3 +52,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    fileprivate func setupUI() {
+        setupToast()
+        
+        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "BackBlackIcon")
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "BackBlackIcon")
+        UINavigationBar.appearance().tintColor = UIColor(red: 30/255, green: 38/255, blue: 34/255, alpha: 1)
+        
+        let mainVC = SignInViewController.instantiate()
+        let navVC = UINavigationController(rootViewController: mainVC)
+        navVC.navigationBar.barTintColor = .white
+        navVC.navigationBar.isTranslucent = false
+        
+        window?.rootViewController = navVC
+    }
+    
+    fileprivate func setupToast() {
+        var style = ToastStyle()
+        style.backgroundColor = Constants.UI.Colors.mainGreen
+        style.messageColor = UIColor.white
+        style.titleColor = UIColor.white
+        
+        style.shadowColor = UIColor.gray
+        style.shadowOpacity = 0.4
+        style.displayShadow = true
+        
+        // just set the shared style and there's no need to provide the style again
+        ToastManager.shared.style = style
+        ToastManager.shared.duration = 3.0
+        ToastManager.shared.position = .bottom
+    }
+}
