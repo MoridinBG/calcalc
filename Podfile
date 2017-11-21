@@ -2,10 +2,10 @@ platform :ios, '10.0'
 use_frameworks!
 
 def shared_pods
-    pod 'XCGLogger', '~> 5.0'
-    pod 'IQKeyboardManagerSwift', '~> 4.0'
-    pod 'Result', '~> 3.0'
-    pod 'KeychainAccess', '~> 3.0'
+    pod 'XCGLogger', '~> 6.0'
+    pod 'IQKeyboardManagerSwift', '~> 5.0'
+    pod 'Result', '~> 3.2'
+    pod 'KeychainAccess', '~> 3.1'
 
     pod 'Toast-Swift', :git => 'https://github.com/MoridinBG/Toast-Swift'
     pod 'NMRangeSlider', :git => 'https://github.com/muZZkat/NMRangeSlider.git'
