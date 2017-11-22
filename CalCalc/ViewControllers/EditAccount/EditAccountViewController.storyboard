@@ -15,7 +15,7 @@
         <!--My Account-->
         <scene sceneID="aih-Ci-NlN">
             <objects>
-                <viewController id="ce0-o3-8YQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditAccountViewController" id="ce0-o3-8YQ" customClass="EditAccountViewController" customModule="CalCalc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1g8-UE-zfh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="820"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,18 +264,18 @@
                     <size key="freeformSize" width="375" height="820"/>
                     <connections>
                         <outlet property="acceptBarButton" destination="75h-Ed-LVO" id="Naa-DT-JVg"/>
+                        <outlet property="caloriesLabel" destination="NpR-wg-JfS" id="Urr-Py-ZCh"/>
+                        <outlet property="caloriesTextField" destination="A6b-j6-fhF" id="fcT-Jj-G2u"/>
                         <outlet property="cancelBarButton" destination="Q4r-nY-R9p" id="ZMG-rw-aQs"/>
                         <outlet property="editBarButton" destination="r1u-5U-Gt1" id="1Q7-eN-sAB"/>
                         <outlet property="emailLabel" destination="cfI-me-40j" id="XDY-R8-i5F"/>
                         <outlet property="emailTextField" destination="GOC-Y0-msI" id="zFQ-08-SGh"/>
                         <outlet property="firstNameLabel" destination="N08-E9-bYY" id="MLB-vt-DF7"/>
-                        <outlet property="firstNameTextField" destination="YsQ-Dw-ksD" id="zCP-f1-Rh2"/>
+                        <outlet property="firstNameTextField" destination="YsQ-Dw-ksD" id="is4-Ul-62n"/>
                         <outlet property="lastNameLabel" destination="ePk-Zz-Fsd" id="U6V-S9-HDR"/>
                         <outlet property="lastNameTextField" destination="cE0-o8-tQH" id="xIE-OD-fkV"/>
                         <outlet property="passwordLabel" destination="q3t-e5-bAj" id="AZK-Gk-nrU"/>
                         <outlet property="passwordTextField" destination="cHt-eV-CcL" id="zAI-NM-ZOC"/>
-                        <outlet property="phoneLabel" destination="NpR-wg-JfS" id="1F4-KI-Y7a"/>
-                        <outlet property="phoneTextField" destination="A6b-j6-fhF" id="Ewk-WJ-BYg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gzj-HW-FPd" userLabel="First Responder" sceneMemberID="firstResponder"/>

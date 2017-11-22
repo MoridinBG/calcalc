@@ -24,7 +24,7 @@ class SignInViewController: UIViewController, StoryboardController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     @IBAction func signInPressed() {
@@ -43,6 +43,8 @@ class SignInViewController: UIViewController, StoryboardController {
     }
     
     @IBAction func signUpPressed() {
+        let vc = EditAccountViewController.instantiate(mode: .newUser)
+        navigationController?.pushViewController(vc, animated: true)    
     }
 }
 
