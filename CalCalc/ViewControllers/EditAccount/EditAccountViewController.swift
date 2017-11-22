@@ -20,19 +20,19 @@ class EditAccountViewController: UIViewController, StoryboardController {
     @IBOutlet fileprivate var acceptBarButton: UIBarButtonItem!
     
     @IBOutlet fileprivate var firstNameLabel: UILabel!
-    @IBOutlet fileprivate var firstNameTextField: UITextField!
+    @IBOutlet fileprivate var firstNameTextField: ValidatedTextfield!
     
     @IBOutlet fileprivate var lastNameLabel: UILabel!
-    @IBOutlet fileprivate var lastNameTextField: UITextField!
-    
-    @IBOutlet fileprivate var emailLabel: UILabel!
-    @IBOutlet fileprivate var emailTextField: UITextField!
-    
-    @IBOutlet fileprivate var passwordLabel: UILabel!
-    @IBOutlet fileprivate var passwordTextField: UITextField!
+    @IBOutlet fileprivate var lastNameTextField: ValidatedTextfield!
     
     @IBOutlet fileprivate var caloriesLabel: UILabel!
-    @IBOutlet fileprivate var caloriesTextField: UITextField!
+    @IBOutlet fileprivate var caloriesTextField: ValidatedTextfield!
+    
+    @IBOutlet fileprivate var emailLabel: UILabel!
+    @IBOutlet fileprivate var emailTextField: ValidatedTextfield!
+    
+    @IBOutlet fileprivate var passwordLabel: UILabel!
+    @IBOutlet fileprivate var passwordTextField: ValidatedTextfield!
     
     
     fileprivate var mode: Mode! {
@@ -60,7 +60,7 @@ class EditAccountViewController: UIViewController, StoryboardController {
         guard let user = buildUser() else { return }
         
         if case .newUser = mode! {
-            guard let password = passwordTextField.text, password != "" else {
+            guard let password = passwordTextField.textField.text, password != "" else {
                 view.makeToastError("You must provide a password")
                 return
             }
@@ -107,7 +107,7 @@ extension EditAccountViewController {
             .forEach { $0?.textColor =  labelColor }
         [firstNameTextField, lastNameTextField, emailTextField, passwordTextField, caloriesTextField]
             .forEach {
-                $0?.textColor = textFieldColor
+                $0?.textField.textColor = textFieldColor
                 $0?.isUserInteractionEnabled = textFieldEnabled
         }
         
@@ -128,32 +128,37 @@ extension EditAccountViewController {
     }
     
     fileprivate func fillIn(user: User?) {
-        firstNameTextField.text = user?.firstName
-        lastNameTextField.text = user?.lastName
-        emailTextField.text = user?.email
+        firstNameTextField.textField.text = user?.firstName
+        lastNameTextField.textField.text = user?.lastName
+        emailTextField.textField.text = user?.email
         
         if let calories = user?.calorieTarget {
-            caloriesTextField.text = "\(calories)"
+            caloriesTextField.textField.text = "\(calories)"
         } else {
-            caloriesTextField.text = nil
+            caloriesTextField.textField.text = nil
         }
     }
     
     fileprivate func buildUser() -> User? {
-        guard let firstName = firstNameTextField.text, firstName != "" else {
+        guard let firstName = firstNameTextField.textField.text, firstName != "" else {
             view.makeToastError("You must provide your first name")
+            firstNameTextField.setValidation(.invalid)
             return nil
         }
+        firstNameTextField.setValidation(.valid)
         
-        guard let lastName = lastNameTextField.text, lastName != "" else {
+        guard let lastName = lastNameTextField.textField.text, lastName != "" else {
             view.makeToastError("You must provide your last name")
+            lastNameTextField.setValidation(.invalid)
             return nil
         }
+        lastNameTextField.setValidation(.valid)
         
         let calorieTarget: Int?
-        if let caloriesText = caloriesTextField.text, !caloriesText.isEmpty {
+        if let caloriesText = caloriesTextField.textField.text, !caloriesText.isEmpty {
             guard let calories = Int(caloriesText), calories >= 0 else {
                 view.makeToastError("You must provide a valid number of calories")
+                caloriesTextField.setValidation(.invalid)
                 return nil
             }
             
@@ -161,11 +166,14 @@ extension EditAccountViewController {
         } else {
             calorieTarget = nil
         }
+        caloriesTextField.setValidation(.valid)
         
-        guard let email = emailTextField.text, email != "", email.isEmail else {
+        guard let email = emailTextField.textField.text, email != "", email.isEmail else {
             view.makeToastError("You must provide a valid email")
+            emailTextField.setValidation(.invalid)
             return nil
         }
+        emailTextField.setValidation(.valid)
         
         let user = User(id: -1,
                         firstName: firstName,

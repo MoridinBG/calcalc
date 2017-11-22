@@ -33,6 +33,12 @@
 		00E5194F1FC589B300EF5935 /* EditAccountViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E5194E1FC589B300EF5935 /* EditAccountViewController.storyboard */; };
 		00E519511FC58DAA00EF5935 /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E519501FC58DAA00EF5935 /* EditAccountViewController.swift */; };
 		00E519541FC58DF900EF5935 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E519531FC58DF900EF5935 /* User.swift */; };
+		00E519561FC5945800EF5935 /* ValidationIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E519551FC5945800EF5935 /* ValidationIndicator.swift */; };
+		00E519581FC5948D00EF5935 /* UIView+Pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E519571FC5948D00EF5935 /* UIView+Pop.swift */; };
+		00E5195B1FC5AAE100EF5935 /* ValidatedTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5195A1FC5AAE100EF5935 /* ValidatedTextfield.swift */; };
+		00E5195D1FC5AAEA00EF5935 /* ValidatedTextfield.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E5195C1FC5AAEA00EF5935 /* ValidatedTextfield.xib */; };
+		00E5195F1FC5AC1500EF5935 /* BaseNIBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5195E1FC5AC1500EF5935 /* BaseNIBView.swift */; };
+		00E519611FC5AC3200EF5935 /* UIView+embedInSuperview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E519601FC5AC3200EF5935 /* UIView+embedInSuperview.swift */; };
 		BEA01845848515890A55A9D8 /* Pods_CalCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +83,12 @@
 		00E5194E1FC589B300EF5935 /* EditAccountViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditAccountViewController.storyboard; sourceTree = "<group>"; };
 		00E519501FC58DAA00EF5935 /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
 		00E519531FC58DF900EF5935 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		00E519551FC5945800EF5935 /* ValidationIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationIndicator.swift; sourceTree = "<group>"; };
+		00E519571FC5948D00EF5935 /* UIView+Pop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Pop.swift"; sourceTree = "<group>"; };
+		00E5195A1FC5AAE100EF5935 /* ValidatedTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatedTextfield.swift; sourceTree = "<group>"; };
+		00E5195C1FC5AAEA00EF5935 /* ValidatedTextfield.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidatedTextfield.xib; sourceTree = "<group>"; };
+		00E5195E1FC5AC1500EF5935 /* BaseNIBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNIBView.swift; sourceTree = "<group>"; };
+		00E519601FC5AC3200EF5935 /* UIView+embedInSuperview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+embedInSuperview.swift"; sourceTree = "<group>"; };
 		187530A7C4FB594136A77DC3 /* Pods-CalCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.debug.xcconfig"; sourceTree = "<group>"; };
 		667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9ADC66898E21AEFACF8637 /* Pods-CalCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				00E519521FC58DE800EF5935 /* Models */,
+				00E519591FC5AABF00EF5935 /* Views */,
 				00E519381FC4DB9200EF5935 /* ViewControllers */,
 				00E519281FC4D87A00EF5935 /* Utilities */,
 				00E519151FC4D84E00EF5935 /* Networking */,
@@ -174,6 +187,7 @@
 				00E519361FC4D8CF00EF5935 /* Logger.swift */,
 				00E519431FC4EB2D00EF5935 /* FormTextField.swift */,
 				00E519491FC4EC6900EF5935 /* Constants.swift */,
+				00E519551FC5945800EF5935 /* ValidationIndicator.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -221,6 +235,8 @@
 				00E5193C1FC4DBFE00EF5935 /* UIViewController+Id.swift */,
 				00E519471FC4EC2C00EF5935 /* String+isEmail.swift */,
 				00E5194B1FC4ECBE00EF5935 /* Toast+Extensions.swift */,
+				00E519571FC5948D00EF5935 /* UIView+Pop.swift */,
+				00E519601FC5AC3200EF5935 /* UIView+embedInSuperview.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -249,6 +265,16 @@
 				00E519531FC58DF900EF5935 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		00E519591FC5AABF00EF5935 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				00E5195A1FC5AAE100EF5935 /* ValidatedTextfield.swift */,
+				00E5195C1FC5AAEA00EF5935 /* ValidatedTextfield.xib */,
+				00E5195E1FC5AC1500EF5935 /* BaseNIBView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		69FC2274CF101CA4A28E3F9F /* Pods */ = {
@@ -354,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E5195D1FC5AAEA00EF5935 /* ValidatedTextfield.xib in Resources */,
 				00E5194F1FC589B300EF5935 /* EditAccountViewController.storyboard in Resources */,
 				00E519421FC4E56C00EF5935 /* SignInViewController.storyboard in Resources */,
 				00E518E31FC4BFAF00EF5935 /* LaunchScreen.storyboard in Resources */,
@@ -451,16 +478,21 @@
 				00E5193D1FC4DBFE00EF5935 /* UIViewController+Id.swift in Sources */,
 				00E519481FC4EC2C00EF5935 /* String+isEmail.swift in Sources */,
 				00E519211FC4D84E00EF5935 /* Endpoint.swift in Sources */,
+				00E5195B1FC5AAE100EF5935 /* ValidatedTextfield.swift in Sources */,
 				00E519271FC4D84E00EF5935 /* URLSessionNetworkProvider.swift in Sources */,
+				00E519581FC5948D00EF5935 /* UIView+Pop.swift in Sources */,
 				00E519251FC4D84E00EF5935 /* NetworkProvider.swift in Sources */,
+				00E519561FC5945800EF5935 /* ValidationIndicator.swift in Sources */,
 				00E519511FC58DAA00EF5935 /* EditAccountViewController.swift in Sources */,
 				00E519241FC4D84E00EF5935 /* Network.swift in Sources */,
 				00E518D91FC4BFAF00EF5935 /* AppDelegate.swift in Sources */,
 				00E5194C1FC4ECBE00EF5935 /* Toast+Extensions.swift in Sources */,
 				00E519371FC4D8CF00EF5935 /* Logger.swift in Sources */,
+				00E5195F1FC5AC1500EF5935 /* BaseNIBView.swift in Sources */,
 				00E519261FC4D84E00EF5935 /* RequestError.swift in Sources */,
 				00E519321FC4D89D00EF5935 /* AutoLoginRequest.swift in Sources */,
 				00E5194A1FC4EC6900EF5935 /* Constants.swift in Sources */,
+				00E519611FC5AC3200EF5935 /* UIView+embedInSuperview.swift in Sources */,
 				00E519541FC58DF900EF5935 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
