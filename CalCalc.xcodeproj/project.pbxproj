@@ -30,6 +30,7 @@
 		00E519481FC4EC2C00EF5935 /* String+isEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E519471FC4EC2C00EF5935 /* String+isEmail.swift */; };
 		00E5194A1FC4EC6900EF5935 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E519491FC4EC6900EF5935 /* Constants.swift */; };
 		00E5194C1FC4ECBE00EF5935 /* Toast+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5194B1FC4ECBE00EF5935 /* Toast+Extensions.swift */; };
+		00E5194F1FC589B300EF5935 /* EditAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E5194E1FC589B300EF5935 /* EditAccount.storyboard */; };
 		BEA01845848515890A55A9D8 /* Pods_CalCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		00E519471FC4EC2C00EF5935 /* String+isEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isEmail.swift"; sourceTree = "<group>"; };
 		00E519491FC4EC6900EF5935 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		00E5194B1FC4ECBE00EF5935 /* Toast+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Toast+Extensions.swift"; sourceTree = "<group>"; };
+		00E5194E1FC589B300EF5935 /* EditAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditAccount.storyboard; sourceTree = "<group>"; };
 		187530A7C4FB594136A77DC3 /* Pods-CalCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.debug.xcconfig"; sourceTree = "<group>"; };
 		667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9ADC66898E21AEFACF8637 /* Pods-CalCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.release.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		00E519381FC4DB9200EF5935 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				00E5194D1FC5899F00EF5935 /* EditAccount */,
 				00E5193E1FC4E54600EF5935 /* SignIn */,
 				00E519451FC4EBEA00EF5935 /* StoryboardController.swift */,
 			);
@@ -224,6 +227,14 @@
 				00E519411FC4E56C00EF5935 /* SignInViewController.storyboard */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		00E5194D1FC5899F00EF5935 /* EditAccount */ = {
+			isa = PBXGroup;
+			children = (
+				00E5194E1FC589B300EF5935 /* EditAccount.storyboard */,
+			);
+			path = EditAccount;
 			sourceTree = "<group>";
 		};
 		69FC2274CF101CA4A28E3F9F /* Pods */ = {
@@ -329,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E5194F1FC589B300EF5935 /* EditAccount.storyboard in Resources */,
 				00E519421FC4E56C00EF5935 /* SignInViewController.storyboard in Resources */,
 				00E518E31FC4BFAF00EF5935 /* LaunchScreen.storyboard in Resources */,
 				00E518E01FC4BFAF00EF5935 /* Assets.xcassets in Resources */,
