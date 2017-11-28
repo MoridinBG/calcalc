@@ -142,23 +142,23 @@ extension EditAccountViewController {
     fileprivate func buildUser() -> User? {
         guard let firstName = firstNameTextField.textField.text, firstName != "" else {
             view.makeToastError("You must provide your first name")
-            firstNameTextField.setValidation(.invalid)
+            firstNameTextField.setValid(.invalid)
             return nil
         }
-        firstNameTextField.setValidation(.valid)
+        firstNameTextField.setValid(.valid)
         
         guard let lastName = lastNameTextField.textField.text, lastName != "" else {
             view.makeToastError("You must provide your last name")
-            lastNameTextField.setValidation(.invalid)
+            lastNameTextField.setValid(.invalid)
             return nil
         }
-        lastNameTextField.setValidation(.valid)
+        lastNameTextField.setValid(.valid)
         
         let calorieTarget: Int?
         if let caloriesText = caloriesTextField.textField.text, !caloriesText.isEmpty {
             guard let calories = Int(caloriesText), calories >= 0 else {
                 view.makeToastError("You must provide a valid number of calories")
-                caloriesTextField.setValidation(.invalid)
+                caloriesTextField.setValid(.invalid)
                 return nil
             }
             
@@ -166,14 +166,14 @@ extension EditAccountViewController {
         } else {
             calorieTarget = nil
         }
-        caloriesTextField.setValidation(.valid)
+        caloriesTextField.setValid(.valid)
         
         guard let email = emailTextField.textField.text, email != "", email.isEmail else {
             view.makeToastError("You must provide a valid email")
-            emailTextField.setValidation(.invalid)
+            emailTextField.setValid(.invalid)
             return nil
         }
-        emailTextField.setValidation(.valid)
+        emailTextField.setValid(.valid)
         
         let user = User(id: -1,
                         firstName: firstName,

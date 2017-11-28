@@ -35,30 +35,22 @@
                                                 <color key="textColor" red="0.1176470588" green="0.14901960780000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CIQ-6N-jiG" customClass="FormTextField" customModule="CalCalc" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qno-t2-sGK" customClass="ValidatedTextfield" customModule="CalCalc" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="24.5" width="311" height="32"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="32" id="PsG-rT-Wx6"/>
+                                                    <constraint firstAttribute="height" constant="32" id="ikc-WH-C4N"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                        <real key="value" value="16"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="qno-t2-sGK" firstAttribute="leading" secondItem="AjV-hz-cmB" secondAttribute="leading" id="3Kl-oo-iMd"/>
                                             <constraint firstItem="R87-g9-tME" firstAttribute="leading" secondItem="AjV-hz-cmB" secondAttribute="leading" id="7B6-Ko-kHR"/>
-                                            <constraint firstAttribute="bottom" secondItem="CIQ-6N-jiG" secondAttribute="bottom" id="GjK-Bj-0KL"/>
-                                            <constraint firstAttribute="trailing" secondItem="CIQ-6N-jiG" secondAttribute="trailing" id="RhR-cB-gbB"/>
-                                            <constraint firstItem="CIQ-6N-jiG" firstAttribute="leading" secondItem="AjV-hz-cmB" secondAttribute="leading" id="ckh-WP-UBH"/>
+                                            <constraint firstAttribute="bottom" secondItem="qno-t2-sGK" secondAttribute="bottom" id="HAq-fH-TbX"/>
+                                            <constraint firstItem="qno-t2-sGK" firstAttribute="top" secondItem="R87-g9-tME" secondAttribute="bottom" constant="8" id="YUc-Iz-291"/>
                                             <constraint firstItem="R87-g9-tME" firstAttribute="top" secondItem="AjV-hz-cmB" secondAttribute="top" id="dck-3b-eam"/>
-                                            <constraint firstItem="CIQ-6N-jiG" firstAttribute="top" secondItem="R87-g9-tME" secondAttribute="bottom" constant="8" id="pxD-QK-tgX"/>
+                                            <constraint firstAttribute="trailing" secondItem="qno-t2-sGK" secondAttribute="trailing" id="gE1-ZW-nra"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qxT-Q1-9qH" userLabel="Email Container">
@@ -70,30 +62,22 @@
                                                 <color key="textColor" red="0.1176470588" green="0.14901960780000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vzb-pi-Rh7" customClass="FormTextField" customModule="CalCalc" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwC-Sp-mWd" customClass="ValidatedTextfield" customModule="CalCalc" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="24.5" width="311" height="32"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="32" id="WAu-sM-Mfz"/>
+                                                    <constraint firstAttribute="height" constant="32" id="dZv-gi-F8M"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                        <real key="value" value="16"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="vzb-pi-Rh7" firstAttribute="top" secondItem="2ih-fP-qvK" secondAttribute="bottom" constant="8" id="L7C-xX-vgi"/>
+                                            <constraint firstAttribute="bottom" secondItem="bwC-Sp-mWd" secondAttribute="bottom" id="50z-0e-ING"/>
+                                            <constraint firstItem="bwC-Sp-mWd" firstAttribute="leading" secondItem="qxT-Q1-9qH" secondAttribute="leading" id="ZSc-ol-NuN"/>
                                             <constraint firstItem="2ih-fP-qvK" firstAttribute="leading" secondItem="qxT-Q1-9qH" secondAttribute="leading" id="boo-sK-4eE"/>
-                                            <constraint firstAttribute="bottom" secondItem="vzb-pi-Rh7" secondAttribute="bottom" id="cx2-WT-wOt"/>
                                             <constraint firstItem="2ih-fP-qvK" firstAttribute="top" secondItem="qxT-Q1-9qH" secondAttribute="top" id="ecO-t3-dUi"/>
-                                            <constraint firstItem="vzb-pi-Rh7" firstAttribute="leading" secondItem="qxT-Q1-9qH" secondAttribute="leading" id="gdN-ev-RG7"/>
-                                            <constraint firstAttribute="trailing" secondItem="vzb-pi-Rh7" secondAttribute="trailing" id="o18-Tt-Itf"/>
+                                            <constraint firstItem="bwC-Sp-mWd" firstAttribute="top" secondItem="2ih-fP-qvK" secondAttribute="bottom" constant="8" id="kFV-xx-z6C"/>
+                                            <constraint firstAttribute="trailing" secondItem="bwC-Sp-mWd" secondAttribute="trailing" id="sfA-6Z-Qdn"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -134,8 +118,8 @@
                         <viewLayoutGuide key="safeArea" id="pbk-T4-2hO"/>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="CIQ-6N-jiG" id="TRo-Ub-qad"/>
-                        <outlet property="passwordTextField" destination="vzb-pi-Rh7" id="Mum-0M-lrh"/>
+                        <outlet property="emailTextField" destination="qno-t2-sGK" id="Rah-o9-X64"/>
+                        <outlet property="passwordTextField" destination="bwC-Sp-mWd" id="p05-br-y40"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SaK-ZM-RGh" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,8 +10,8 @@ import UIKit
 
 class SignInViewController: UIViewController, StoryboardController {
 
-    @IBOutlet fileprivate var emailTextField: FormTextField!
-    @IBOutlet fileprivate var passwordTextField: FormTextField!
+    @IBOutlet fileprivate var emailTextField: ValidatedTextfield!
+    @IBOutlet fileprivate var passwordTextField: ValidatedTextfield!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +33,19 @@ class SignInViewController: UIViewController, StoryboardController {
         
         guard let email = emailTextField.text, email.isEmail, !email.isEmpty else {
             view.makeToastError("Email is invalid")
+            emailTextField.setValid(.invalid)
             return
         }
+        emailTextField.setValid(.valid)
         
         guard let _ = passwordTextField.text, !email.isEmpty else {
             view.makeToastError("Password is empty")
+            passwordTextField.setValid(.invalid)
             return
         }
+        passwordTextField.setValid(.valid)
+        
+        
     }
     
     @IBAction func signUpPressed() {

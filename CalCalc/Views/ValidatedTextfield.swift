@@ -21,6 +21,15 @@ class ValidatedTextfield: BaseNIBView {
     @IBOutlet fileprivate var validationHiddenConstraint: NSLayoutConstraint!
     @IBOutlet var textfieldToIcon: NSLayoutConstraint!
     
+    var text: String? {
+        get {
+            return textField.text
+        }
+        set {
+            textField.text = newValue
+        }
+    }
+    
     override func nibDidLoad() {
         super.nibDidLoad()
         
@@ -30,7 +39,7 @@ class ValidatedTextfield: BaseNIBView {
         textfieldToIcon.isActive = false
     }
     
-    func setValidation(_ result: ValidationResult) {
+    func setValid(_ result: ValidationResult) {
         switch result {
         case .undefined:
             validationIcon.image = nil
