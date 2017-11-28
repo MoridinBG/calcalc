@@ -39,6 +39,12 @@
 		00E5195D1FC5AAEA00EF5935 /* ValidatedTextfield.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E5195C1FC5AAEA00EF5935 /* ValidatedTextfield.xib */; };
 		00E5195F1FC5AC1500EF5935 /* BaseNIBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5195E1FC5AC1500EF5935 /* BaseNIBView.swift */; };
 		00E519611FC5AC3200EF5935 /* UIView+embedInSuperview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E519601FC5AC3200EF5935 /* UIView+embedInSuperview.swift */; };
+		00F77DDC1FCDD5C800C5AB32 /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F77DD71FCDD5C800C5AB32 /* AuthEndpoint.swift */; };
+		00F77DDD1FCDD5C800C5AB32 /* AuthRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F77DD81FCDD5C800C5AB32 /* AuthRequests.swift */; };
+		00F77DDE1FCDD5C800C5AB32 /* UsersEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F77DDA1FCDD5C800C5AB32 /* UsersEndpoint.swift */; };
+		00F77DDF1FCDD5C800C5AB32 /* UsersRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F77DDB1FCDD5C800C5AB32 /* UsersRequests.swift */; };
+		00F77DE11FCDE80C00C5AB32 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F77DE01FCDE80C00C5AB32 /* AuthToken.swift */; };
+		00F77DE31FCDF5D400C5AB32 /* String+base64Encoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F77DE21FCDF5D400C5AB32 /* String+base64Encoded.swift */; };
 		BEA01845848515890A55A9D8 /* Pods_CalCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +95,12 @@
 		00E5195C1FC5AAEA00EF5935 /* ValidatedTextfield.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidatedTextfield.xib; sourceTree = "<group>"; };
 		00E5195E1FC5AC1500EF5935 /* BaseNIBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNIBView.swift; sourceTree = "<group>"; };
 		00E519601FC5AC3200EF5935 /* UIView+embedInSuperview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+embedInSuperview.swift"; sourceTree = "<group>"; };
+		00F77DD71FCDD5C800C5AB32 /* AuthEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthEndpoint.swift; sourceTree = "<group>"; };
+		00F77DD81FCDD5C800C5AB32 /* AuthRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRequests.swift; sourceTree = "<group>"; };
+		00F77DDA1FCDD5C800C5AB32 /* UsersEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersEndpoint.swift; sourceTree = "<group>"; };
+		00F77DDB1FCDD5C800C5AB32 /* UsersRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersRequests.swift; sourceTree = "<group>"; };
+		00F77DE01FCDE80C00C5AB32 /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
+		00F77DE21FCDF5D400C5AB32 /* String+base64Encoded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+base64Encoded.swift"; sourceTree = "<group>"; };
 		187530A7C4FB594136A77DC3 /* Pods-CalCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.debug.xcconfig"; sourceTree = "<group>"; };
 		667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9ADC66898E21AEFACF8637 /* Pods-CalCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +185,8 @@
 		00E519161FC4D84E00EF5935 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				00F77DD61FCDD5C800C5AB32 /* AuthEndpoint */,
+				00F77DD91FCDD5C800C5AB32 /* UsersEndpoint */,
 				00E519171FC4D84E00EF5935 /* Endpoint+URLRequest.swift */,
 				00E519181FC4D84E00EF5935 /* Endpoint.swift */,
 			);
@@ -237,6 +251,7 @@
 				00E5194B1FC4ECBE00EF5935 /* Toast+Extensions.swift */,
 				00E519571FC5948D00EF5935 /* UIView+Pop.swift */,
 				00E519601FC5AC3200EF5935 /* UIView+embedInSuperview.swift */,
+				00F77DE21FCDF5D400C5AB32 /* String+base64Encoded.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				00E519531FC58DF900EF5935 /* User.swift */,
+				00F77DE01FCDE80C00C5AB32 /* AuthToken.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,6 +291,24 @@
 				00E5195E1FC5AC1500EF5935 /* BaseNIBView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		00F77DD61FCDD5C800C5AB32 /* AuthEndpoint */ = {
+			isa = PBXGroup;
+			children = (
+				00F77DD71FCDD5C800C5AB32 /* AuthEndpoint.swift */,
+				00F77DD81FCDD5C800C5AB32 /* AuthRequests.swift */,
+			);
+			path = AuthEndpoint;
+			sourceTree = "<group>";
+		};
+		00F77DD91FCDD5C800C5AB32 /* UsersEndpoint */ = {
+			isa = PBXGroup;
+			children = (
+				00F77DDA1FCDD5C800C5AB32 /* UsersEndpoint.swift */,
+				00F77DDB1FCDD5C800C5AB32 /* UsersRequests.swift */,
+			);
+			path = UsersEndpoint;
 			sourceTree = "<group>";
 		};
 		69FC2274CF101CA4A28E3F9F /* Pods */ = {
@@ -443,6 +477,7 @@
 				"${BUILT_PRODUCTS_DIR}/NMRangeSlider/NMRangeSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
 			);
@@ -453,6 +488,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NMRangeSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
 			);
@@ -477,12 +513,16 @@
 				00E519351FC4D89D00EF5935 /* TypedNotification.swift in Sources */,
 				00E5193D1FC4DBFE00EF5935 /* UIViewController+Id.swift in Sources */,
 				00E519481FC4EC2C00EF5935 /* String+isEmail.swift in Sources */,
+				00F77DE11FCDE80C00C5AB32 /* AuthToken.swift in Sources */,
 				00E519211FC4D84E00EF5935 /* Endpoint.swift in Sources */,
 				00E5195B1FC5AAE100EF5935 /* ValidatedTextfield.swift in Sources */,
 				00E519271FC4D84E00EF5935 /* URLSessionNetworkProvider.swift in Sources */,
 				00E519581FC5948D00EF5935 /* UIView+Pop.swift in Sources */,
+				00F77DE31FCDF5D400C5AB32 /* String+base64Encoded.swift in Sources */,
 				00E519251FC4D84E00EF5935 /* NetworkProvider.swift in Sources */,
+				00F77DDF1FCDD5C800C5AB32 /* UsersRequests.swift in Sources */,
 				00E519561FC5945800EF5935 /* ValidationIndicator.swift in Sources */,
+				00F77DDD1FCDD5C800C5AB32 /* AuthRequests.swift in Sources */,
 				00E519511FC58DAA00EF5935 /* EditAccountViewController.swift in Sources */,
 				00E519241FC4D84E00EF5935 /* Network.swift in Sources */,
 				00E518D91FC4BFAF00EF5935 /* AppDelegate.swift in Sources */,
@@ -491,9 +531,11 @@
 				00E5195F1FC5AC1500EF5935 /* BaseNIBView.swift in Sources */,
 				00E519261FC4D84E00EF5935 /* RequestError.swift in Sources */,
 				00E519321FC4D89D00EF5935 /* AutoLoginRequest.swift in Sources */,
+				00F77DDE1FCDD5C800C5AB32 /* UsersEndpoint.swift in Sources */,
 				00E5194A1FC4EC6900EF5935 /* Constants.swift in Sources */,
 				00E519611FC5AC3200EF5935 /* UIView+embedInSuperview.swift in Sources */,
 				00E519541FC58DF900EF5935 /* User.swift in Sources */,
+				00F77DDC1FCDD5C800C5AB32 /* AuthEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

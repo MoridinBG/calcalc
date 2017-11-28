@@ -6,6 +6,7 @@ PODS:
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
   - Result (3.2.4)
+  - SwiftyJSON (4.0.0)
   - Toast-Swift (3.0.1)
   - XCGLogger (6.0.1):
     - XCGLogger/Core (= 6.0.1)
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - KeychainAccess (~> 3.1)
   - NMRangeSlider (from `https://github.com/muZZkat/NMRangeSlider.git`)
   - Result (~> 3.2)
+  - SwiftyJSON (~> 4.0)
   - Toast-Swift (~> 3.0)
   - XCGLogger (~> 6.0)
 
@@ -35,9 +37,10 @@ SPEC CHECKSUMS:
   NMRangeSlider: 02bb205d0c7f9bea09b5cf00fbcbc2bc2e3e10ff
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
   XCGLogger: b4ca980580108cfeaf221afe158f5d89c1be22e0
 
-PODFILE CHECKSUM: 82972497370eea1f3a5872174aca5b236ccf80aa
+PODFILE CHECKSUM: c20b5e564cf7e5b552877d70c6f0c4e4b0be95dd
 
 COCOAPODS: 1.3.1

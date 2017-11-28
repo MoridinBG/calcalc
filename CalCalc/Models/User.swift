@@ -8,11 +8,34 @@
 
 import Foundation
 
-struct User {
+struct User: Codable {
+    enum Role: String, Codable {
+        case user
+        case manager
+        case admin
+    }
+    
     let id: Int
     
     let firstName: String
     let lastName: String
     let email: String
     let calorieTarget: Int?
+    var role: Role
+    
+    init(id: Int,
+         firstName: String,
+         lastName: String,
+         email: String,
+         calorieTarget:Int?,
+         role: Role = .user) {
+        
+        self.id = id
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+        self.calorieTarget = calorieTarget
+        self.role = role
+    }
 }
+

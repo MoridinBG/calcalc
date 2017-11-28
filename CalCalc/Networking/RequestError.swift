@@ -25,7 +25,7 @@ enum RequestError: Error {
         case .statusCode(_, let message): errorMessage = message
         case .requestFailure(let message): errorMessage = message
         case .badResponse(let message): errorMessage = message
-        case .serverError(let errors): errorMessage = errors.flatMap({ $0.message }).joined(separator: ". ")
+        case .serverError(let errors): errorMessage = errors.flatMap({ $0.reason }).joined(separator: ". ")
         case .cancelled: errorMessage = "Cancelled"
 
         case .noConnection: errorMessage = "Connection to server failed"
@@ -35,17 +35,17 @@ enum RequestError: Error {
     }
 
     var isFailedAuthentication: Bool {
-        let authenticationErrors: [ServerError.ErrorCode] = [.authenticationFailed, .tokenInvalid, .tokenExpired]
+        let authenticationErrors: [ServerError.Identifier] = [.invalidCredentials, .tokenInvalid, .tokenExpired]
         if case .serverError(let errors) = self,
-            errors.filter({ authenticationErrors.contains($0.code) }).count > 0 {
+            errors.filter({ authenticationErrors.contains($0.identifier) }).count > 0 {
 
             return true
         } else { return false }
     }
 
-    func isServerError(_ code: ServerError.ErrorCode) -> Bool {
+    func isServerError(_ identifier: ServerError.Identifier) -> Bool {
         if case .serverError(let errors) = self {
-            return errors.contains(where: { $0.code == code })
+            return errors.contains(where: { $0.identifier == identifier })
         }
 
         return false
@@ -76,41 +76,20 @@ func == (lhs: RequestError, rhs: RequestError) -> Bool {
 
 
 struct ServerError: Decodable {
-    enum ErrorCode: String, Decodable {
+    enum Identifier: String, Decodable {
         case unknown
         
-        case wrongArguments = "GEN-WRONG-ARGS"
-        case noResult = "GEN-NOT-FOUND"
-        
-        case authenticationFailed
+        case invalidCredentials = "Authentication.AuthenticationError.invalidCredentials"
         case tokenInvalid
         case tokenExpired
     }
-    enum RootCodingKeys: String, CodingKey {
-        case error
-    }
     
-    enum ErrorCodingKeys: String, CodingKey {
-        case code
-        case httpCode = "http_code"
-        case message
-    }
-    
-    var code: ErrorCode = .unknown
-    var message: String? = nil
-    var httpCode: Int
-    
-    init(from decoder: Decoder) throws {
-        let rootContainer = try decoder.container(keyedBy: RootCodingKeys.self)
-        let container = try rootContainer.nestedContainer(keyedBy: ErrorCodingKeys.self, forKey: .error)
-        
-        self.code = try container.decode(ErrorCode.self, forKey: .code)
-        self.httpCode = try container.decode(Int.self, forKey: .httpCode)
-        self.message = try container.decode(String.self, forKey: .message)
-    }
+    var identifier: Identifier = .unknown
+    var debugReason: String
+    var reason: String
 }
 
 extension ServerError: Equatable {}
 func == (lhs: ServerError, rhs: ServerError) -> Bool {
-    return lhs.code == rhs.code
+    return lhs.identifier == rhs.identifier
 }

@@ -6,6 +6,7 @@ def shared_pods
     pod 'IQKeyboardManagerSwift', '~> 5.0'
     pod 'Result', '~> 3.2'
     pod 'KeychainAccess', '~> 3.1'
+    pod 'SwiftyJSON', '~> 4.0'
 
     pod 'Toast-Swift', '~> 3.0'
     pod 'NMRangeSlider', :git => 'https://github.com/muZZkat/NMRangeSlider.git'

@@ -119,25 +119,18 @@ class DefaultNetwork: Network {
                     return
                 }
                 
-                let data = try! JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
-                if let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
-                    print(string)
+                if let prettyData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted), let prettyString = NSString(data: prettyData, encoding: String.Encoding.utf8.rawValue) {
+                    print(prettyString)
                 }
                 
                 let jsonDecoder = JSONDecoder()
                 if response.statusCode >= 200 && response.statusCode <= 299 {
-                    if let payload = json["data"] as? [String : Any], let payloadData = try? JSONSerialization.data(withJSONObject: payload, options: []) {
-                        netLog.info("\(endpoint.method.rawValue.uppercased()) \(endpoint.path) success")
-                        handler?(.success(payloadData)) /* Only possible success */
-                    } else {
-                        netLog.error("\(endpoint.method.rawValue.uppercased()) \(endpoint.path) failed. Status code \(response.statusCode), but no 'data' field in json")
-                        handler?(.failure(.badResponse(message: "No 'data' field in json with status code \(response.statusCode)")))
-                    }
-                } else if json["error"] != nil, let error = try? jsonDecoder.decode(ServerError.self, from: data)  {
-                    netLog.error("\(endpoint.method.rawValue.uppercased()) \(endpoint.path) failed. Server error: \(error.code.rawValue)")
+                    handler?(.success(data)) /* Only possible success */
+                } else if let isError = json["error"] as? Bool, isError == true, let error = try? jsonDecoder.decode(ServerError.self, from: data)  {
+                    netLog.error("\(endpoint.method.rawValue.uppercased()) \(endpoint.path) failed. Server error: \(error.identifier.rawValue)")
                     
                     // Handle expired auth token by backlogging requests and signaling for re-login
-                    if error.code == .tokenExpired || error.code == .tokenInvalid {
+                    if error.identifier == .tokenExpired || error.identifier == .tokenInvalid {
                         if !self.isUpdatingToken {
                             netLog.info("Token expired. Requesting new.")
                             

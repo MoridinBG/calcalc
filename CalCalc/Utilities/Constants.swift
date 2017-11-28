@@ -9,6 +9,10 @@
 import UIKit
 
 struct Constants {
+    struct URLs {
+        static let backend = "http://localhost:8080/api/v1"
+    }
+    
     struct UI {
         struct Colors {
             static let mainGreen = UIColor(red: 47/255, green: 212/255, blue: 129/255, alpha: 1)
