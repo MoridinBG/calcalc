@@ -51,6 +51,10 @@ class ValidatedTextfield: BaseNIBView {
             validationHiddenConstraint.isActive = false
             textfieldToIcon.isActive = true
             
+            DispatchQueue.main.asyncAfter(deadline: .now() + Constants.UI.AnimationLongererDuration) {
+                self.setValid(.undefined)
+            }
+            
         case .invalid:
             validationIcon.image = #imageLiteral(resourceName: "ErrorIcon")
             validationHiddenConstraint.isActive = false

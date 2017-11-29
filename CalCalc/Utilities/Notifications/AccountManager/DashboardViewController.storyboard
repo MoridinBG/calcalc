@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dashboard-->
+        <scene sceneID="3S3-fx-Huk">
+            <objects>
+                <viewController storyboardIdentifier="DashboardViewController" id="jmc-MM-8mV" customClass="DashboardViewController" customModule="CalCalc" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="B8e-Wn-tqy"/>
+                        <viewControllerLayoutGuide type="bottom" id="2CO-XZ-eLB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ggB-TK-r9N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zp1-7J-vi1">
+                                <rect key="frame" x="123" y="8" width="129" height="29"/>
+                                <segments>
+                                    <segment title="Calories"/>
+                                    <segment title="Users"/>
+                                </segments>
+                                <color key="tintColor" red="0.18431372549019609" green="0.83137254901960778" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="jmc-MM-8mV" eventType="valueChanged" id="f1o-92-Y9U"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLc-x5-XAy">
+                                <rect key="frame" x="0.0" y="52" width="375" height="551"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zp1-7J-vi1" firstAttribute="top" secondItem="B8e-Wn-tqy" secondAttribute="bottom" constant="8" id="2xs-9N-Rdv"/>
+                            <constraint firstItem="YLc-x5-XAy" firstAttribute="top" secondItem="zp1-7J-vi1" secondAttribute="bottom" constant="16" id="4v8-v5-a9E"/>
+                            <constraint firstItem="YLc-x5-XAy" firstAttribute="leading" secondItem="ggB-TK-r9N" secondAttribute="leading" id="73T-F8-tZp"/>
+                            <constraint firstItem="2CO-XZ-eLB" firstAttribute="top" secondItem="YLc-x5-XAy" secondAttribute="bottom" id="C2x-VK-fMq"/>
+                            <constraint firstAttribute="trailing" secondItem="YLc-x5-XAy" secondAttribute="trailing" id="Jds-LC-CVI"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="zp1-7J-vi1" secondAttribute="trailing" id="V7I-GX-KYn"/>
+                            <constraint firstItem="zp1-7J-vi1" firstAttribute="centerX" secondItem="ggB-TK-r9N" secondAttribute="centerX" id="qOz-N7-QYQ"/>
+                            <constraint firstItem="zp1-7J-vi1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ggB-TK-r9N" secondAttribute="leadingMargin" id="r2C-0m-cW0"/>
+                            <constraint firstItem="YLc-x5-XAy" firstAttribute="top" secondItem="B8e-Wn-tqy" secondAttribute="bottom" priority="700" constant="8" id="ry7-7R-Xzl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="P8E-Ne-g4m"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dashboard" id="Olw-Re-kwE">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Kpl-BI-3Mi">
+                            <color key="tintColor" red="0.18431372549019609" green="0.83137254901960778" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="logoutPressed:" destination="jmc-MM-8mV" id="hQy-Sg-d1j"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="TyL-Qv-KjV">
+                                <color key="tintColor" red="0.18431372549019609" green="0.83137254901960778" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="addPressed:" destination="jmc-MM-8mV" id="L8q-PD-cYb"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="aRF-RH-5iA">
+                                <color key="tintColor" red="0.18431372549019609" green="0.83137254901960778" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="reportPressed:" destination="jmc-MM-8mV" id="aCc-co-fab"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="addButton" destination="TyL-Qv-KjV" id="6PX-dn-q22"/>
+                        <outlet property="containerView" destination="YLc-x5-XAy" id="H2m-r2-PXo"/>
+                        <outlet property="dashboardTypeSegment" destination="zp1-7J-vi1" id="r8s-bF-2ah"/>
+                        <outlet property="reportButton" destination="aRF-RH-5iA" id="A8N-WF-cVB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lww-aO-AfI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125.59999999999999" y="229.83508245877064"/>
+        </scene>
+    </scenes>
+</document>

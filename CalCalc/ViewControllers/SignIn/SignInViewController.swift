@@ -31,6 +31,7 @@ class SignInViewController: UIViewController, StoryboardController {
         super.viewDidLoad()
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        passwordTextField.textField.isSecureTextEntry = true
         
         view.makeToastActivity()
         accountManager.tryAutoLogin() { result in
@@ -109,7 +110,9 @@ class SignInViewController: UIViewController, StoryboardController {
 
 extension SignInViewController {
     fileprivate func logInUser(user: User) {
-        view.makeToast("Logged in")
+        let vc = DashboardViewController.initialize(user: user)
+        let navVC = UINavigationController(rootViewController: vc)
+        present(navVC, animated: true, completion: nil)
     }
 }
 
