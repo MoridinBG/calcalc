@@ -15,17 +15,39 @@ class SignInViewController: UIViewController, StoryboardController {
     
     
     private var authRequests: AuthRequests = DefaultAuthRequests()
+    private var accountManager: AccountManager = AccountManager()
     
     
-    class func initialize(authRequests: AuthRequests = DefaultAuthRequests()) -> SignInViewController {
+    class func initialize(authRequests: AuthRequests = DefaultAuthRequests(),
+                          accountManager: AccountManager = AccountManager()) -> SignInViewController {
         let vc = SignInViewController.instantiate()
         vc.authRequests = authRequests
+        vc.accountManager = accountManager
         
         return vc
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        view.makeToastActivity()
+        accountManager.tryAutoLogin() { result in
+            switch result {
+            case .failure(let error):
+                self.view.hideToastActivity()
+                if case .requestError = error {
+                    self.view.makeToast(error.errorMessage)
+                }
+                
+            case .success(let user):
+                log.info("Logged in \(user.email)")
+                self.view.hideToastActivity()
+                
+                self.logInUser(user: user)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,19 +78,34 @@ class SignInViewController: UIViewController, StoryboardController {
         }
         passwordTextField.setValid(.valid)
         
-        authRequests.login(email: email, password: password) { result in
-            switch result {
-            case .failure(let error):
-                self.view.makeToastError(error.errorMessage)
-            case .success(let token):
-                self.view.makeToast("Token: \(token)")
-            }
+        view.makeToastActivity()
+        accountManager.login(
+            username: email,
+            password: password) { result in
+                switch result {
+                case .failure(let error):
+                    self.view.hideToastActivity()
+                    self.view.makeToast(error.errorMessage)
+                    
+                case .success(let user):
+                    log.info("Logged in \(user.email)")
+                    self.view.hideToastActivity()
+                    self.view.makeToast("Logged in \(user.email)")
+                    
+                    self.logInUser(user: user)
+                }
         }
     }
     
     @IBAction func signUpPressed() {
         let vc = EditAccountViewController.instantiate(mode: .newUser)
         navigationController?.pushViewController(vc, animated: true)    
+    }
+}
+
+extension SignInViewController {
+    fileprivate func logInUser(user: User) {
+        view.makeToast("Logged in")
     }
 }
 

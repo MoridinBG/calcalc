@@ -39,7 +39,7 @@ struct DefaultUsersRequests: UsersRequests {
     func register(user: User, withPassword password: String, handler: ((Result<User, RequestError>) -> ())?) -> NetworkRequest {
         return network.apiRequest(endpoint: UsersEndpoint.create(user, password: password)) { result in
             handler?(result.flatMap({ data in
-                guard let user = try? JSONDecoder().decode(User.self, from: data) else {
+                guard let user = (try? JSONDecoder().decode([String : User].self, from: data))?["user"] else {
                     netLog.error("Could not parse user from response")
                     return .failure(RequestError.badResponse(message: "Could not parse user from response"))
                 }
@@ -51,7 +51,7 @@ struct DefaultUsersRequests: UsersRequests {
     func registerAuthenticated(user: User, withPassword password: String, handler: ((Result<User, RequestError>) -> ())?) -> NetworkRequest {
         return network.apiRequest(endpoint: UsersEndpoint.createAuthenticated(user, password: password)) { result in
             handler?(result.flatMap({ data in
-                guard let user = try? JSONDecoder().decode(User.self, from: data) else {
+                guard let user = (try? JSONDecoder().decode([String : User].self, from: data))?["user"] else {
                     netLog.error("Could not parse user from response")
                     return .failure(RequestError.badResponse(message: "Could not parse user from response"))
                 }
@@ -63,7 +63,7 @@ struct DefaultUsersRequests: UsersRequests {
     func update(user: User, withPassword password: String?, handler: ((Result<User, RequestError>) -> ())?) -> NetworkRequest {
         return network.apiRequest(endpoint: UsersEndpoint.update(user, password: password)) { result in
             handler?(result.flatMap({ data in
-                guard let user = try? JSONDecoder().decode(User.self, from: data) else {
+                guard let user = (try? JSONDecoder().decode([String : User].self, from: data))?["user"] else {
                     netLog.error("Could not parse user from response")
                     return .failure(RequestError.badResponse(message: "Could not parse user from response"))
                 }
@@ -81,7 +81,7 @@ struct DefaultUsersRequests: UsersRequests {
     func getCurrent(handler: ((Result<User, RequestError>) -> ())?) -> NetworkRequest {
         return network.apiRequest(endpoint: UsersEndpoint.getCurrent) { result in
             handler?(result.flatMap({ data in
-                guard let user = try? JSONDecoder().decode(User.self, from: data) else {
+                guard let user = (try? JSONDecoder().decode([String : User].self, from: data))?["user"] else {
                     netLog.error("Could not parse user from response")
                     return .failure(RequestError.badResponse(message: "Could not parse user from response"))
                 }
@@ -93,7 +93,7 @@ struct DefaultUsersRequests: UsersRequests {
     func getAll(handler: ((Result<[User], RequestError>) -> ())?) -> NetworkRequest {
         return network.apiRequest(endpoint: UsersEndpoint.getAll) { result in
             handler?(result.flatMap({ data in
-                guard let users = try? JSONDecoder().decode([User].self, from: data) else {
+                guard let users = (try? JSONDecoder().decode([String : [User]].self, from: data))?["users"] else {
                     netLog.error("Could not parse users from response")
                     return .failure(RequestError.badResponse(message: "Could not parse users from response"))
                 }
