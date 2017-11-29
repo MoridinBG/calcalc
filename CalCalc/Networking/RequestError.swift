@@ -80,8 +80,11 @@ struct ServerError: Decodable {
         case unknown
         
         case invalidCredentials = "Authentication.AuthenticationError.invalidCredentials"
-        case tokenInvalid
-        case tokenExpired
+        case tokenInvalid               = "Authentication.AuthenticationError.tokenInvalid"
+        case tokenExpired               = "Vapor.Abor.Authentication.AuthenticationError.tokenExpired"
+        
+        case userInvalidPassword        = "Vapor.Abort.Validation.User.invalidPassword"
+        case userInvalidEmail           = "Vapor.Abort.Validation.User.invalidEmail"
     }
     
     var identifier: Identifier = .unknown

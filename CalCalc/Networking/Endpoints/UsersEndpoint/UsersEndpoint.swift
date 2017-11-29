@@ -58,22 +58,24 @@ enum UsersEndpoint: Endpoint {
         case .create(let user, let password), .createAuthenticated(let user, let password):
             return [
                 "user" : [
-                    "first_name" : user.firstName,
-                    "last_name" : user.lastName,
+                    "firstName" : user.firstName,
+                    "lastName" : user.lastName,
                     "email" : user.email,
                     "password" : password,
-                    "role" : user.role.rawValue
+                    "role" : user.role.rawValue,
+                    "calorieTarget" : user.calorieTarget as Any
                 ]
             ] as [String : [String : Any]]
 
         case .update(let user, let password):
             return [
                 "user" : [
-                    "first_name" : user.firstName,
-                    "last_name" : user.lastName,
+                    "firstName" : user.firstName,
+                    "lastName" : user.lastName,
                     "email" : user.email,
-                    "password" : password,
-                    "role" : user.role.rawValue
+                    "password" : password as Any,
+                    "role" : user.role.rawValue,
+                    "calorieTarget" : user.calorieTarget as Any
                 ]
             ]
 

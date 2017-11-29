@@ -15,37 +15,55 @@ class EditAccountViewController: UIViewController, StoryboardController {
         case editUser(User)
     }
     
-    @IBOutlet fileprivate var editBarButton: UIBarButtonItem!
-    @IBOutlet fileprivate var cancelBarButton: UIBarButtonItem!
-    @IBOutlet fileprivate var acceptBarButton: UIBarButtonItem!
+    @IBOutlet private var editBarButton: UIBarButtonItem!
+    @IBOutlet private var cancelBarButton: UIBarButtonItem!
+    @IBOutlet private var acceptBarButton: UIBarButtonItem!
     
-    @IBOutlet fileprivate var firstNameLabel: UILabel!
-    @IBOutlet fileprivate var firstNameTextField: ValidatedTextfield!
+    @IBOutlet private var firstNameLabel: UILabel!
+    @IBOutlet private var firstNameTextField: ValidatedTextfield!
     
-    @IBOutlet fileprivate var lastNameLabel: UILabel!
-    @IBOutlet fileprivate var lastNameTextField: ValidatedTextfield!
+    @IBOutlet private var lastNameLabel: UILabel!
+    @IBOutlet private var lastNameTextField: ValidatedTextfield!
     
-    @IBOutlet fileprivate var caloriesLabel: UILabel!
-    @IBOutlet fileprivate var caloriesTextField: ValidatedTextfield!
+    @IBOutlet private var caloriesLabel: UILabel!
+    @IBOutlet private var caloriesTextField: ValidatedTextfield!
     
-    @IBOutlet fileprivate var emailLabel: UILabel!
-    @IBOutlet fileprivate var emailTextField: ValidatedTextfield!
+    @IBOutlet private var emailLabel: UILabel!
+    @IBOutlet private var emailTextField: ValidatedTextfield!
     
-    @IBOutlet fileprivate var passwordLabel: UILabel!
-    @IBOutlet fileprivate var passwordTextField: ValidatedTextfield!
+    @IBOutlet private var passwordLabel: UILabel!
+    @IBOutlet private var passwordTextField: ValidatedTextfield!
     
+    @IBOutlet private var roleContainer: UIView!
+    @IBOutlet private var roleTextField: ValidatedTextfield!
     
-    fileprivate var mode: Mode! {
+    private var mode: Mode! {
         didSet {
             change(mode: mode)
         }
     }
     
+    private var currentUser: User?
+    private var onRegister: ((User) -> ())?
     
-    static func instantiate(mode: Mode) -> EditAccountViewController {
+    private var usersRequests: UsersRequests = DefaultUsersRequests()
+    private var notificationCenter: NotificationCenter = NotificationCenter()
+    
+    
+    
+    static func instantiate(mode: Mode,
+                            currentUser: User? = nil,
+                            usersRequests: UsersRequests = DefaultUsersRequests(),
+                            notificationCenter: NotificationCenter = NotificationCenter(),
+                            onRegister: ((User) -> ())? = nil) -> EditAccountViewController {
         let vc = EditAccountViewController.instantiate()
         _ = vc.view // This will setup UI elements
         vc.mode = mode
+        vc.currentUser = currentUser
+        vc.onRegister = onRegister
+        vc.usersRequests = usersRequests
+        vc.notificationCenter = notificationCenter
+        
         
         return vc
     }
@@ -56,19 +74,65 @@ class EditAccountViewController: UIViewController, StoryboardController {
         setupUI()
     }
     
-    @IBAction func acceptPressed() {
+    @IBAction private func acceptPressed() {
         guard let user = buildUser() else { return }
         
-        if case .newUser = mode! {
-            guard let password = passwordTextField.textField.text, password != "" else {
-                view.makeToastError("You must provide a password")
-                return
+        let setUpdateFailHandler: (RequestError) -> () = { error in
+            self.view.makeToast(error.errorMessage)
+            
+            if error.isServerError(.userInvalidPassword) {
+                self.passwordTextField.setValid(.invalid)
+            }
+            
+            if error.isServerError(.userInvalidEmail) {
+                self.emailTextField.setValid(.invalid)
             }
         }
         
+        if case .newUser = mode! {
+            guard let password = passwordTextField.text, password != "" else {
+                view.makeToastError("You must provide a password")
+                passwordTextField.setValid(.invalid)
+                return
+            }
+            passwordTextField.setValid(.valid)
+            
+            usersRequests.register(
+                user: user,
+                withPassword: password) { result in
+                    switch result {
+                    case .failure(let error):
+                        setUpdateFailHandler(error)
+                        
+                    case .success(let user):
+                        self.onRegister?(user)
+                    }
+            }
+        } else if case .editUser = mode! {
+            guard let password = passwordTextField.text, password != "" else {
+                view.makeToastError("You must provide a password")
+                passwordTextField.setValid(.invalid)
+                return
+            }
+            passwordTextField.setValid(.valid)
+            
+            usersRequests.update(user: user, withPassword: password) { result in
+                switch result {
+                case .failure(let error):
+                    setUpdateFailHandler(error)
+                    
+                case .success(let user):
+                    if self.currentUser?.id == user.id {
+                        self.notificationCenter.postTypedNotification(Notifications.AccountManager.UserUpdated(user: user, observedObject: nil))
+                    }
+                }
+            }
+        }
+        
+        
     }
     
-    @IBAction func cancelPressed() {
+    @IBAction private func cancelPressed() {
         guard case .editUser(let user) = mode! else {
             return
         }
@@ -76,17 +140,38 @@ class EditAccountViewController: UIViewController, StoryboardController {
         mode = .showUser(user)
     }
     
-    @IBAction func editPressed() {
+    @IBAction private func editPressed() {
         guard case .showUser(let user) = mode! else {
             return
         }
         
         mode = .editUser(user)
     }
+    
+    @IBAction private func rolePressed() {
+        guard let currentUser = currentUser, currentUser.role != .user else { return }
+        
+        let sheet = UIAlertController(title: "Choose user role", message: nil, preferredStyle: .actionSheet)
+        sheet.addAction(UIAlertAction(title: "User", style: .default, handler: { _ in
+            self.roleTextField.text = "User"
+        }))
+        
+        sheet.addAction(UIAlertAction(title: "Manager", style: .default, handler: { _ in
+            self.roleTextField.text = "Manager"
+        }))
+        
+        if currentUser.role == .admin {
+            sheet.addAction(UIAlertAction(title: "Admin", style: .default, handler: { _ in
+                self.roleTextField.text = "Admin"
+            }))
+        }
+        
+        present(sheet, animated: true, completion: nil)
+    }
 }
 
 extension EditAccountViewController {
-    fileprivate func change(mode: Mode) {
+    private func change(mode: Mode) {
         let labelColor: UIColor
         let textFieldColor: UIColor
         let textFieldEnabled: Bool
@@ -96,11 +181,14 @@ extension EditAccountViewController {
             labelColor = UIColor(red: 30/255, green: 38/255, blue: 34/255, alpha: 0.25)
             textFieldColor = UIColor(red: 30/255, green: 38/255, blue: 34/255, alpha: 1)
             textFieldEnabled = true
+            
         case .showUser:
             labelColor = UIColor(red: 30/255, green: 38/255, blue: 34/255, alpha: 1)
             textFieldColor = UIColor(red: 30/255, green: 38/255, blue: 34/255, alpha: 0.25)
             textFieldEnabled = false
         }
+        
+        roleContainer.isHidden = currentUser?.role != .user
         
         lastNameLabel.layer.borderColor = UIColor.white.cgColor
         [ firstNameLabel, lastNameLabel, emailLabel, passwordLabel, caloriesLabel ]
@@ -127,7 +215,7 @@ extension EditAccountViewController {
         }
     }
     
-    fileprivate func fillIn(user: User?) {
+    private func fillIn(user: User?) {
         firstNameTextField.textField.text = user?.firstName
         lastNameTextField.textField.text = user?.lastName
         emailTextField.textField.text = user?.email
@@ -139,7 +227,7 @@ extension EditAccountViewController {
         }
     }
     
-    fileprivate func buildUser() -> User? {
+    private func buildUser() -> User? {
         guard let firstName = firstNameTextField.textField.text, firstName != "" else {
             view.makeToastError("You must provide your first name")
             firstNameTextField.setValid(.invalid)
@@ -175,7 +263,14 @@ extension EditAccountViewController {
         }
         emailTextField.setValid(.valid)
         
-        let user = User(id: -1,
+        let id: Int
+        if case .editUser(let user) = mode! {
+            id = user.id
+        } else {
+            id = -1
+        }
+        
+        let user = User(id: id,
                         firstName: firstName,
                         lastName: lastName,
                         email: email,
@@ -184,9 +279,11 @@ extension EditAccountViewController {
         return user
     }
     
-    fileprivate func setupUI() {
+    private func setupUI() {
         for textField in [firstNameTextField, lastNameTextField, emailTextField, passwordTextField, caloriesTextField] {
             textField?.layer.cornerRadius = 5
         }
+        
+        passwordTextField.textField.isSecureTextEntry = true
     }
 }

@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="756"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tjQ-1v-zhU" userLabel="Scroll Container">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="478.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="559.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vt-Iz-6nk">
                                                 <rect key="frame" x="16" y="32" width="184.5" height="25.5"/>
@@ -40,7 +40,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="a3g-Dt-15a">
-                                                <rect key="frame" x="16" y="81.5" width="343" height="389"/>
+                                                <rect key="frame" x="16" y="81.5" width="343" height="470"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3D4-NN-8Wf" userLabel="First Name Container">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="65"/>
@@ -182,6 +182,44 @@
                                                             <constraint firstItem="TbX-js-Pd1" firstAttribute="top" secondItem="q3t-e5-bAj" secondAttribute="bottom" constant="16" id="knY-X9-DvR"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dic-As-dzW" userLabel="Role Container">
+                                                        <rect key="frame" x="0.0" y="405" width="343" height="65"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egy-4d-kgK">
+                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" red="0.1176470588" green="0.14901960780000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFD-vk-mB5" customClass="ValidatedTextfield" customModule="CalCalc" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="33" width="343" height="32"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="DS2-rt-GAw"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qd-zh-qTP">
+                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="65"/>
+                                                                <connections>
+                                                                    <action selector="rolePressed" destination="ce0-o3-8YQ" eventType="touchUpInside" id="Mh7-Rg-zq4"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="Egy-4d-kgK" secondAttribute="trailing" id="CYp-7Q-4ib"/>
+                                                            <constraint firstItem="Egy-4d-kgK" firstAttribute="top" secondItem="dic-As-dzW" secondAttribute="top" id="FQl-M1-1C0"/>
+                                                            <constraint firstItem="2Qd-zh-qTP" firstAttribute="leading" secondItem="dic-As-dzW" secondAttribute="leading" id="Had-lL-jp5"/>
+                                                            <constraint firstItem="tFD-vk-mB5" firstAttribute="top" secondItem="Egy-4d-kgK" secondAttribute="bottom" constant="16" id="NmH-GO-Itd"/>
+                                                            <constraint firstItem="2Qd-zh-qTP" firstAttribute="top" secondItem="dic-As-dzW" secondAttribute="top" id="Pco-40-C2P"/>
+                                                            <constraint firstAttribute="bottom" secondItem="tFD-vk-mB5" secondAttribute="bottom" id="Qhy-NH-IMF"/>
+                                                            <constraint firstAttribute="bottom" secondItem="2Qd-zh-qTP" secondAttribute="bottom" id="SUj-gq-d3t"/>
+                                                            <constraint firstAttribute="trailing" secondItem="tFD-vk-mB5" secondAttribute="trailing" id="hl1-OO-O1q"/>
+                                                            <constraint firstItem="Egy-4d-kgK" firstAttribute="leading" secondItem="dic-As-dzW" secondAttribute="leading" id="lrL-fG-Yat"/>
+                                                            <constraint firstItem="tFD-vk-mB5" firstAttribute="leading" secondItem="dic-As-dzW" secondAttribute="leading" id="nB0-mJ-BRm"/>
+                                                            <constraint firstAttribute="trailing" secondItem="2Qd-zh-qTP" secondAttribute="trailing" id="oLu-t0-xGw"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -256,6 +294,8 @@
                         <outlet property="lastNameTextField" destination="DR3-ps-g5H" id="RIM-e6-yw0"/>
                         <outlet property="passwordLabel" destination="q3t-e5-bAj" id="AZK-Gk-nrU"/>
                         <outlet property="passwordTextField" destination="TbX-js-Pd1" id="LWS-vS-b5Q"/>
+                        <outlet property="roleContainer" destination="dic-As-dzW" id="fy6-yN-WWs"/>
+                        <outlet property="roleTextField" destination="tFD-vk-mB5" id="ioH-62-FSK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gzj-HW-FPd" userLabel="First Responder" sceneMemberID="firstResponder"/>

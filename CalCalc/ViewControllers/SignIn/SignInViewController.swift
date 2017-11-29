@@ -98,7 +98,11 @@ class SignInViewController: UIViewController, StoryboardController {
     }
     
     @IBAction func signUpPressed() {
-        let vc = EditAccountViewController.instantiate(mode: .newUser)
+        let vc = EditAccountViewController.instantiate(mode: .newUser) { user in
+            self.emailTextField.text = user.email
+            self.passwordTextField.textField.becomeFirstResponder()
+            self.navigationController?.popViewController(animated: true)
+        }
         navigationController?.pushViewController(vc, animated: true)    
     }
 }

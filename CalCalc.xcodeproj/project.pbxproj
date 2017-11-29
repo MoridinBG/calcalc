@@ -47,6 +47,7 @@
 		00F77DE31FCDF5D400C5AB32 /* String+base64Encoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F77DE21FCDF5D400C5AB32 /* String+base64Encoded.swift */; };
 		00F81F6A1FCF056D0007B4A3 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F81F691FCF056D0007B4A3 /* AccountManager.swift */; };
 		00F81F6C1FCF06900007B4A3 /* UserChanged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F81F6B1FCF06900007B4A3 /* UserChanged.swift */; };
+		00F81F751FCF4EE70007B4A3 /* UserUpdated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F81F741FCF4EE70007B4A3 /* UserUpdated.swift */; };
 		BEA01845848515890A55A9D8 /* Pods_CalCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +106,7 @@
 		00F77DE21FCDF5D400C5AB32 /* String+base64Encoded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+base64Encoded.swift"; sourceTree = "<group>"; };
 		00F81F691FCF056D0007B4A3 /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		00F81F6B1FCF06900007B4A3 /* UserChanged.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserChanged.swift; sourceTree = "<group>"; };
+		00F81F741FCF4EE70007B4A3 /* UserUpdated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdated.swift; sourceTree = "<group>"; };
 		187530A7C4FB594136A77DC3 /* Pods-CalCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.debug.xcconfig"; sourceTree = "<group>"; };
 		667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9ADC66898E21AEFACF8637 /* Pods-CalCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.release.xcconfig"; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				00F81F6B1FCF06900007B4A3 /* UserChanged.swift */,
 				00E5192C1FC4D89D00EF5935 /* AutoLoginRequest.swift */,
+				00F81F741FCF4EE70007B4A3 /* UserUpdated.swift */,
 			);
 			path = AccountManager;
 			sourceTree = "<group>";
@@ -274,8 +277,8 @@
 		00E5194D1FC5899F00EF5935 /* EditAccount */ = {
 			isa = PBXGroup;
 			children = (
-				00E5194E1FC589B300EF5935 /* EditAccountViewController.storyboard */,
 				00E519501FC58DAA00EF5935 /* EditAccountViewController.swift */,
+				00E5194E1FC589B300EF5935 /* EditAccountViewController.storyboard */,
 			);
 			path = EditAccount;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 			files = (
 				00E519401FC4E55900EF5935 /* SignInViewController.swift in Sources */,
 				00E519441FC4EB2D00EF5935 /* FormTextField.swift in Sources */,
+				00F81F751FCF4EE70007B4A3 /* UserUpdated.swift in Sources */,
 				00E519461FC4EBEA00EF5935 /* StoryboardController.swift in Sources */,
 				00E519201FC4D84E00EF5935 /* Endpoint+URLRequest.swift in Sources */,
 				00E519341FC4D89D00EF5935 /* AuthTokenUpdated.swift in Sources */,
