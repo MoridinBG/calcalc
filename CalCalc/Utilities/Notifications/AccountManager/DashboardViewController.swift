@@ -22,7 +22,8 @@ class DashboardViewController: UIViewController, StoryboardController {
     fileprivate var currentUser: User!
     fileprivate var source: DashboardSource = .calorie
     
-    
+    fileprivate var usersController: UIViewController!
+    fileprivate var caloriesController: CaloriesListViewController!
     fileprivate var accountManager: AccountManager!
     
     static func initialize(user: User,
@@ -31,6 +32,8 @@ class DashboardViewController: UIViewController, StoryboardController {
         let vc = DashboardViewController.instantiate()
         vc.currentUser = user
         vc.accountManager = accountManager
+        vc.usersController = UIViewController()
+        vc.caloriesController = CaloriesListViewController.instantiate()
         
         return vc
     }
@@ -49,10 +52,30 @@ class DashboardViewController: UIViewController, StoryboardController {
             reportButton.tintColor = .white
             reportButton.isEnabled = true
             
+            self.addChildViewController(caloriesController)
+            self.containerView.addSubview(caloriesController.view)
+            caloriesController.view.embedInSuperview()
+            caloriesController.didMove(toParentViewController: self)
+            
+            if usersController.view.superview != nil {
+                usersController.view.removeFromSuperview()
+                usersController.didMove(toParentViewController: nil)
+            }
+            
         case 1:
             source = .users
             reportButton.tintColor = .clear
             reportButton.isEnabled = false
+            
+            self.addChildViewController(usersController)
+            self.containerView.addSubview(usersController.view)
+            usersController.view.embedInSuperview()
+            usersController.didMove(toParentViewController: self)
+            
+            if caloriesController.view.superview != nil {
+                caloriesController.view.removeFromSuperview()
+                caloriesController.didMove(toParentViewController: nil)
+            }
             
         default:
             source = .calorie
@@ -74,7 +97,10 @@ class DashboardViewController: UIViewController, StoryboardController {
             break
             
         case .users:
-            break
+            let vc = EditAccountViewController.instantiate(mode: .newUser, currentUser: currentUser) { newUser in
+                
+            }
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

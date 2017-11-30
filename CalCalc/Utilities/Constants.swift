@@ -26,4 +26,31 @@ struct Constants {
         static let AnimationLongerererDuration = 1.5
         static let AnimationLongerererestDuration = 2.0
     }
+    
+    struct DateFormatters {
+        static var shortDate: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .short
+            return formatter
+        }()
+        
+        static var mediumDate: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            return formatter
+        }()
+        
+        static var shortTime: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.timeStyle = .short
+            return formatter
+        }()
+        
+        static var serializationDate: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.timeZone = TimeZone(secondsFromGMT: 0) // Avoid adjusting time
+            formatter.dateFormat = "yyyy-MM-dd"
+            return formatter
+        }()
+    }
 }

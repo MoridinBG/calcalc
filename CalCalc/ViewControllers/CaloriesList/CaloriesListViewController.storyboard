@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Calories List View Controller-->
+        <scene sceneID="jWI-BW-akq">
+            <objects>
+                <viewController storyboardIdentifier="CaloriesListViewController" id="m27-S7-NwX" customClass="CaloriesListViewController" customModule="CalCalc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mIU-Dj-pzv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yh3-7R-I1W" customClass="CaloriesFilterView" customModule="CalCalc" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="133"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="133" placeholder="YES" id="T5l-2W-DGF"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KF7-ft-8Iz">
+                                <rect key="frame" x="0.0" y="133" width="375" height="470"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="m27-S7-NwX" id="Ow6-az-Phn"/>
+                                    <outlet property="delegate" destination="m27-S7-NwX" id="09C-2U-zAM"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yh3-7R-I1W" firstAttribute="leading" secondItem="Mei-tg-yW4" secondAttribute="leading" id="MQf-vT-hwu"/>
+                            <constraint firstItem="KF7-ft-8Iz" firstAttribute="top" secondItem="yh3-7R-I1W" secondAttribute="bottom" id="THH-Qr-UpV"/>
+                            <constraint firstItem="Mei-tg-yW4" firstAttribute="trailing" secondItem="yh3-7R-I1W" secondAttribute="trailing" id="Z6e-yZ-KU5"/>
+                            <constraint firstItem="KF7-ft-8Iz" firstAttribute="leading" secondItem="Mei-tg-yW4" secondAttribute="leading" id="ZFY-Fy-t8a"/>
+                            <constraint firstItem="Mei-tg-yW4" firstAttribute="trailing" secondItem="KF7-ft-8Iz" secondAttribute="trailing" id="ZcO-qs-cDZ"/>
+                            <constraint firstItem="yh3-7R-I1W" firstAttribute="top" secondItem="Mei-tg-yW4" secondAttribute="top" id="g4b-0Q-PUH"/>
+                            <constraint firstItem="Mei-tg-yW4" firstAttribute="bottom" secondItem="KF7-ft-8Iz" secondAttribute="bottom" id="wct-c0-k6s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mei-tg-yW4"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="KF7-ft-8Iz" id="2GL-O2-lr2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4vB-LD-ze3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-286" y="37"/>
+        </scene>
+    </scenes>
+</document>

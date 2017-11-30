@@ -50,6 +50,12 @@
 		00F81F751FCF4EE70007B4A3 /* UserUpdated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F81F741FCF4EE70007B4A3 /* UserUpdated.swift */; };
 		00FC1AEE1FCF64A400F2F201 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FC1AED1FCF64A400F2F201 /* DashboardViewController.swift */; };
 		00FC1AF01FCF65EB00F2F201 /* DashboardViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FC1AEF1FCF65EB00F2F201 /* DashboardViewController.storyboard */; };
+		00FC1AF31FD01AF200F2F201 /* CaloriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FC1AF21FD01AF200F2F201 /* CaloriesListViewController.swift */; };
+		00FC1AF51FD01AFB00F2F201 /* CaloriesListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FC1AF41FD01AFB00F2F201 /* CaloriesListViewController.storyboard */; };
+		00FC1AF81FD01E2800F2F201 /* CaloriesFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FC1AF71FD01E2800F2F201 /* CaloriesFilterView.swift */; };
+		00FC1AFA1FD01E3400F2F201 /* CaloriesFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00FC1AF91FD01E3400F2F201 /* CaloriesFilterView.xib */; };
+		00FC1AFC1FD0237B00F2F201 /* CalorieEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FC1AFB1FD0237B00F2F201 /* CalorieEntry.swift */; };
+		00FC1AFE1FD0240600F2F201 /* CaloriesDateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FC1AFD1FD0240600F2F201 /* CaloriesDateFilter.swift */; };
 		BEA01845848515890A55A9D8 /* Pods_CalCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +117,12 @@
 		00F81F741FCF4EE70007B4A3 /* UserUpdated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdated.swift; sourceTree = "<group>"; };
 		00FC1AED1FCF64A400F2F201 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashboardViewController.swift; path = CalCalc/Utilities/Notifications/AccountManager/DashboardViewController.swift; sourceTree = SOURCE_ROOT; };
 		00FC1AEF1FCF65EB00F2F201 /* DashboardViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = DashboardViewController.storyboard; path = CalCalc/Utilities/Notifications/AccountManager/DashboardViewController.storyboard; sourceTree = SOURCE_ROOT; };
+		00FC1AF21FD01AF200F2F201 /* CaloriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesListViewController.swift; sourceTree = "<group>"; };
+		00FC1AF41FD01AFB00F2F201 /* CaloriesListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CaloriesListViewController.storyboard; sourceTree = "<group>"; };
+		00FC1AF71FD01E2800F2F201 /* CaloriesFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesFilterView.swift; sourceTree = "<group>"; };
+		00FC1AF91FD01E3400F2F201 /* CaloriesFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaloriesFilterView.xib; sourceTree = "<group>"; };
+		00FC1AFB1FD0237B00F2F201 /* CalorieEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieEntry.swift; sourceTree = "<group>"; };
+		00FC1AFD1FD0240600F2F201 /* CaloriesDateFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesDateFilter.swift; sourceTree = "<group>"; };
 		187530A7C4FB594136A77DC3 /* Pods-CalCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.debug.xcconfig"; sourceTree = "<group>"; };
 		667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9ADC66898E21AEFACF8637 /* Pods-CalCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.release.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +260,7 @@
 		00E519381FC4DB9200EF5935 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				00FC1AF11FD01AD800F2F201 /* CaloriesList */,
 				00FC1AEC1FCF648600F2F201 /* Dashboard */,
 				00E5194D1FC5899F00EF5935 /* EditAccount */,
 				00E5193E1FC4E54600EF5935 /* SignIn */,
@@ -293,6 +306,8 @@
 			children = (
 				00E519531FC58DF900EF5935 /* User.swift */,
 				00F77DE01FCDE80C00C5AB32 /* AuthToken.swift */,
+				00FC1AFB1FD0237B00F2F201 /* CalorieEntry.swift */,
+				00FC1AFD1FD0240600F2F201 /* CaloriesDateFilter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -341,6 +356,25 @@
 			);
 			name = Dashboard;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		00FC1AF11FD01AD800F2F201 /* CaloriesList */ = {
+			isa = PBXGroup;
+			children = (
+				00FC1AF61FD01E1000F2F201 /* CaloriesFilterView */,
+				00FC1AF21FD01AF200F2F201 /* CaloriesListViewController.swift */,
+				00FC1AF41FD01AFB00F2F201 /* CaloriesListViewController.storyboard */,
+			);
+			path = CaloriesList;
+			sourceTree = "<group>";
+		};
+		00FC1AF61FD01E1000F2F201 /* CaloriesFilterView */ = {
+			isa = PBXGroup;
+			children = (
+				00FC1AF71FD01E2800F2F201 /* CaloriesFilterView.swift */,
+				00FC1AF91FD01E3400F2F201 /* CaloriesFilterView.xib */,
+			);
+			path = CaloriesFilterView;
 			sourceTree = "<group>";
 		};
 		69FC2274CF101CA4A28E3F9F /* Pods */ = {
@@ -448,6 +482,8 @@
 			files = (
 				00FC1AF01FCF65EB00F2F201 /* DashboardViewController.storyboard in Resources */,
 				00E5195D1FC5AAEA00EF5935 /* ValidatedTextfield.xib in Resources */,
+				00FC1AFA1FD01E3400F2F201 /* CaloriesFilterView.xib in Resources */,
+				00FC1AF51FD01AFB00F2F201 /* CaloriesListViewController.storyboard in Resources */,
 				00E5194F1FC589B300EF5935 /* EditAccountViewController.storyboard in Resources */,
 				00E519421FC4E56C00EF5935 /* SignInViewController.storyboard in Resources */,
 				00E518E31FC4BFAF00EF5935 /* LaunchScreen.storyboard in Resources */,
@@ -552,6 +588,8 @@
 				00E5195B1FC5AAE100EF5935 /* ValidatedTextfield.swift in Sources */,
 				00E519271FC4D84E00EF5935 /* URLSessionNetworkProvider.swift in Sources */,
 				00E519581FC5948D00EF5935 /* UIView+Pop.swift in Sources */,
+				00FC1AFE1FD0240600F2F201 /* CaloriesDateFilter.swift in Sources */,
+				00FC1AF31FD01AF200F2F201 /* CaloriesListViewController.swift in Sources */,
 				00F77DE31FCDF5D400C5AB32 /* String+base64Encoded.swift in Sources */,
 				00E519251FC4D84E00EF5935 /* NetworkProvider.swift in Sources */,
 				00F77DDF1FCDD5C800C5AB32 /* UsersRequests.swift in Sources */,
@@ -563,6 +601,7 @@
 				00E519241FC4D84E00EF5935 /* Network.swift in Sources */,
 				00E518D91FC4BFAF00EF5935 /* AppDelegate.swift in Sources */,
 				00E5194C1FC4ECBE00EF5935 /* Toast+Extensions.swift in Sources */,
+				00FC1AFC1FD0237B00F2F201 /* CalorieEntry.swift in Sources */,
 				00F81F6A1FCF056D0007B4A3 /* AccountManager.swift in Sources */,
 				00E519371FC4D8CF00EF5935 /* Logger.swift in Sources */,
 				00E5195F1FC5AC1500EF5935 /* BaseNIBView.swift in Sources */,
@@ -572,6 +611,7 @@
 				00E5194A1FC4EC6900EF5935 /* Constants.swift in Sources */,
 				00E519611FC5AC3200EF5935 /* UIView+embedInSuperview.swift in Sources */,
 				00E519541FC58DF900EF5935 /* User.swift in Sources */,
+				00FC1AF81FD01E2800F2F201 /* CaloriesFilterView.swift in Sources */,
 				00F77DDC1FCDD5C800C5AB32 /* AuthEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
