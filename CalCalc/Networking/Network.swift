@@ -113,7 +113,12 @@ class DefaultNetwork: Network {
                 handler?(.failure(requestError))
 
             case .success((let response, let data)):
-                guard let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [String : Any] else {
+                guard let json = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [String : Any] else {
+                    if data.count == 0 && response.statusCode >= 200 && response.statusCode <= 299 { // Empty json
+                        handler?(.success(data))
+                        return
+                    }
+                    
                     netLog.error("\(endpoint.method.rawValue.uppercased()) \(endpoint.path) failed. could not parse JSON from response")
                     handler?(.failure(.badResponse(message: "Could not process JSON from server response")))
                     return
@@ -125,7 +130,7 @@ class DefaultNetwork: Network {
                 
                 let jsonDecoder = JSONDecoder()
                 if response.statusCode >= 200 && response.statusCode <= 299 {
-                    handler?(.success(data)) /* Only possible success */
+                    handler?(.success(data)) /* Success */
                 } else if let isError = json["error"] as? Bool, isError == true, let error = try? jsonDecoder.decode(ServerError.self, from: data)  {
                     netLog.error("\(endpoint.method.rawValue.uppercased()) \(endpoint.path) failed. Server error: \(error.identifier.rawValue)")
                     
