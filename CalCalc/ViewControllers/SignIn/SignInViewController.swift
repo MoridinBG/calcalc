@@ -54,6 +54,8 @@ class SignInViewController: UIViewController, StoryboardController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        passwordTextField.text = nil
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -295,6 +295,7 @@
                         <outlet property="passwordLabel" destination="q3t-e5-bAj" id="AZK-Gk-nrU"/>
                         <outlet property="passwordTextField" destination="TbX-js-Pd1" id="LWS-vS-b5Q"/>
                         <outlet property="roleContainer" destination="dic-As-dzW" id="fy6-yN-WWs"/>
+                        <outlet property="roleLabel" destination="Egy-4d-kgK" id="joi-ZP-dWA"/>
                         <outlet property="roleTextField" destination="tFD-vk-mB5" id="ioH-62-FSK"/>
                     </connections>
                 </viewController>

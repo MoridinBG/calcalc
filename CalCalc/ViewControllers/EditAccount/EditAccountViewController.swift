@@ -35,6 +35,7 @@ class EditAccountViewController: UIViewController, StoryboardController {
     @IBOutlet private var passwordTextField: ValidatedTextfield!
     
     @IBOutlet private var roleContainer: UIView!
+    @IBOutlet private var roleLabel: UILabel!
     @IBOutlet private var roleTextField: ValidatedTextfield!
     
     private var mode: Mode! {
@@ -56,10 +57,11 @@ class EditAccountViewController: UIViewController, StoryboardController {
                             usersRequests: UsersRequests = DefaultUsersRequests(),
                             notificationCenter: NotificationCenter = NotificationCenter(),
                             onRegister: ((User) -> ())? = nil) -> EditAccountViewController {
+        
         let vc = EditAccountViewController.instantiate()
         _ = vc.view // This will setup UI elements
-        vc.mode = mode
         vc.currentUser = currentUser
+        vc.mode = mode
         vc.onRegister = onRegister
         vc.usersRequests = usersRequests
         vc.notificationCenter = notificationCenter
@@ -97,16 +99,30 @@ class EditAccountViewController: UIViewController, StoryboardController {
             }
             passwordTextField.setValid(.valid)
             
-            usersRequests.register(
-                user: user,
-                withPassword: password) { result in
-                    switch result {
-                    case .failure(let error):
-                        setUpdateFailHandler(error)
-                        
-                    case .success(let user):
-                        self.onRegister?(user)
-                    }
+            if currentUser == nil {
+                usersRequests.register(
+                    user: user,
+                    withPassword: password) { result in
+                        switch result {
+                        case .failure(let error):
+                            setUpdateFailHandler(error)
+                            
+                        case .success(let user):
+                            self.onRegister?(user)
+                        }
+                }
+            } else {
+                usersRequests.registerAuthenticated(
+                    user: user,
+                    withPassword: password) { result in
+                        switch result {
+                        case .failure(let error):
+                            setUpdateFailHandler(error)
+                            
+                        case .success(let user):
+                            self.onRegister?(user)
+                        }
+                }
             }
         } else if case .editUser = mode! {
             guard let password = passwordTextField.text, password != "" else {
@@ -178,22 +194,22 @@ extension EditAccountViewController {
         
         switch mode {
         case .newUser, .editUser:
-            labelColor = UIColor(red: 30/255, green: 38/255, blue: 34/255, alpha: 0.25)
+            labelColor = UIColor(red: 30/255, green: 38/255, blue: 34/255, alpha: 1)
             textFieldColor = UIColor(red: 30/255, green: 38/255, blue: 34/255, alpha: 1)
             textFieldEnabled = true
             
         case .showUser:
-            labelColor = UIColor(red: 30/255, green: 38/255, blue: 34/255, alpha: 1)
+            labelColor = UIColor(red: 30/255, green: 38/255, blue: 34/255, alpha: 0.25)
             textFieldColor = UIColor(red: 30/255, green: 38/255, blue: 34/255, alpha: 0.25)
             textFieldEnabled = false
         }
         
-        roleContainer.isHidden = currentUser?.role != .user
+        roleContainer.isHidden = currentUser?.role == .user || currentUser == nil
         
         lastNameLabel.layer.borderColor = UIColor.white.cgColor
-        [ firstNameLabel, lastNameLabel, emailLabel, passwordLabel, caloriesLabel ]
+        [ firstNameLabel, lastNameLabel, emailLabel, passwordLabel, caloriesLabel, roleLabel ]
             .forEach { $0?.textColor =  labelColor }
-        [firstNameTextField, lastNameTextField, emailTextField, passwordTextField, caloriesTextField]
+        [firstNameTextField, lastNameTextField, emailTextField, passwordTextField, caloriesTextField, roleTextField]
             .forEach {
                 $0?.textField.textColor = textFieldColor
                 $0?.isUserInteractionEnabled = textFieldEnabled
@@ -203,14 +219,21 @@ extension EditAccountViewController {
         case .editUser(let user):
             fillIn(user: user)
             navigationItem.rightBarButtonItems = [ acceptBarButton, cancelBarButton ]
+            if let currentUser = currentUser, currentUser.id == user.id {
+                navigationItem.title = "Edit Account"
+            } else {
+                navigationItem.title = "Edit User"
+            }
             
         case .showUser(let user):
             fillIn(user: user)
             navigationItem.rightBarButtonItems = [ editBarButton ]
+            navigationItem.title = "User profile"
             
         case .newUser:
             fillIn(user: nil)
             navigationItem.rightBarButtonItems = [ acceptBarButton ]
+            navigationItem.title = "New User"
             
         }
     }
@@ -219,6 +242,7 @@ extension EditAccountViewController {
         firstNameTextField.textField.text = user?.firstName
         lastNameTextField.textField.text = user?.lastName
         emailTextField.textField.text = user?.email
+        roleTextField.text = user?.role.rawValue.uppercased() ?? "User"
         
         if let calories = user?.calorieTarget {
             caloriesTextField.textField.text = "\(calories)"
@@ -270,11 +294,14 @@ extension EditAccountViewController {
             id = -1
         }
         
+        let role = User.Role(rawValue: roleTextField.text?.lowercased() ?? "") ?? .user
+        
         let user = User(id: id,
                         firstName: firstName,
                         lastName: lastName,
                         email: email,
-                        calorieTarget: calorieTarget)
+                        calorieTarget: calorieTarget,
+                        role: role)
         
         return user
     }

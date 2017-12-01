@@ -161,7 +161,7 @@ class DefaultNetwork: Network {
                     }
                 } else {
                     netLog.error("\(endpoint.method.rawValue.uppercased()) \(endpoint.path) failed. Bad status code \(response.statusCode)")
-                    handler?(.failure(.statusCode(statusCode: response.statusCode, message: nil)))
+                    handler?(.failure(.statusCode(statusCode: response.statusCode, message: json["reason"] as? String)))
                 }
             }
         })
