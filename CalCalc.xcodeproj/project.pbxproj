@@ -56,6 +56,12 @@
 		00FC1AFA1FD01E3400F2F201 /* CaloriesFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00FC1AF91FD01E3400F2F201 /* CaloriesFilterView.xib */; };
 		00FC1AFC1FD0237B00F2F201 /* CalorieEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FC1AFB1FD0237B00F2F201 /* CalorieEntry.swift */; };
 		00FC1AFE1FD0240600F2F201 /* CaloriesDateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FC1AFD1FD0240600F2F201 /* CaloriesDateFilter.swift */; };
+		00FC1B011FD0DEAD00F2F201 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FC1B001FD0DEAD00F2F201 /* UserListViewController.swift */; };
+		00FC1B031FD0DEC000F2F201 /* UserListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FC1B021FD0DEC000F2F201 /* UserListViewController.storyboard */; };
+		00FC1B051FD0DF2800F2F201 /* UserListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FC1B041FD0DF2800F2F201 /* UserListTableViewCell.swift */; };
+		00FC1B071FD0E00500F2F201 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FC1B061FD0E00500F2F201 /* DataSource.swift */; };
+		00FC1B091FD0E06E00F2F201 /* UITableView+dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FC1B081FD0E06E00F2F201 /* UITableView+dequeue.swift */; };
+		00FC1B0B1FD0E0A200F2F201 /* Cells+reuseId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FC1B0A1FD0E0A200F2F201 /* Cells+reuseId.swift */; };
 		BEA01845848515890A55A9D8 /* Pods_CalCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +129,12 @@
 		00FC1AF91FD01E3400F2F201 /* CaloriesFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaloriesFilterView.xib; sourceTree = "<group>"; };
 		00FC1AFB1FD0237B00F2F201 /* CalorieEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieEntry.swift; sourceTree = "<group>"; };
 		00FC1AFD1FD0240600F2F201 /* CaloriesDateFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesDateFilter.swift; sourceTree = "<group>"; };
+		00FC1B001FD0DEAD00F2F201 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		00FC1B021FD0DEC000F2F201 /* UserListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserListViewController.storyboard; sourceTree = "<group>"; };
+		00FC1B041FD0DF2800F2F201 /* UserListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewCell.swift; sourceTree = "<group>"; };
+		00FC1B061FD0E00500F2F201 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		00FC1B081FD0E06E00F2F201 /* UITableView+dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+dequeue.swift"; sourceTree = "<group>"; };
+		00FC1B0A1FD0E0A200F2F201 /* Cells+reuseId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cells+reuseId.swift"; sourceTree = "<group>"; };
 		187530A7C4FB594136A77DC3 /* Pods-CalCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.debug.xcconfig"; sourceTree = "<group>"; };
 		667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9ADC66898E21AEFACF8637 /* Pods-CalCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.release.xcconfig"; sourceTree = "<group>"; };
@@ -278,6 +290,8 @@
 				00E519571FC5948D00EF5935 /* UIView+Pop.swift */,
 				00E519601FC5AC3200EF5935 /* UIView+embedInSuperview.swift */,
 				00F77DE21FCDF5D400C5AB32 /* String+base64Encoded.swift */,
+				00FC1B081FD0E06E00F2F201 /* UITableView+dequeue.swift */,
+				00FC1B0A1FD0E0A200F2F201 /* Cells+reuseId.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -307,6 +321,7 @@
 				00F77DE01FCDE80C00C5AB32 /* AuthToken.swift */,
 				00FC1AFB1FD0237B00F2F201 /* CalorieEntry.swift */,
 				00FC1AFD1FD0240600F2F201 /* CaloriesDateFilter.swift */,
+				00FC1B061FD0E00500F2F201 /* DataSource.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -350,6 +365,7 @@
 		00FC1AEC1FCF648600F2F201 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				00FC1AFF1FD0DE8E00F2F201 /* UserList */,
 				00FC1AF11FD01AD800F2F201 /* CaloriesList */,
 				00FC1AED1FCF64A400F2F201 /* DashboardViewController.swift */,
 				00FC1AEF1FCF65EB00F2F201 /* DashboardViewController.storyboard */,
@@ -375,6 +391,16 @@
 				00FC1AF91FD01E3400F2F201 /* CaloriesFilterView.xib */,
 			);
 			path = CaloriesFilterView;
+			sourceTree = "<group>";
+		};
+		00FC1AFF1FD0DE8E00F2F201 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				00FC1B001FD0DEAD00F2F201 /* UserListViewController.swift */,
+				00FC1B021FD0DEC000F2F201 /* UserListViewController.storyboard */,
+				00FC1B041FD0DF2800F2F201 /* UserListTableViewCell.swift */,
+			);
+			path = UserList;
 			sourceTree = "<group>";
 		};
 		69FC2274CF101CA4A28E3F9F /* Pods */ = {
@@ -485,6 +511,7 @@
 				00FC1AFA1FD01E3400F2F201 /* CaloriesFilterView.xib in Resources */,
 				00FC1AF51FD01AFB00F2F201 /* CaloriesListViewController.storyboard in Resources */,
 				00E5194F1FC589B300EF5935 /* EditAccountViewController.storyboard in Resources */,
+				00FC1B031FD0DEC000F2F201 /* UserListViewController.storyboard in Resources */,
 				00E519421FC4E56C00EF5935 /* SignInViewController.storyboard in Resources */,
 				00E518E31FC4BFAF00EF5935 /* LaunchScreen.storyboard in Resources */,
 				00E518E01FC4BFAF00EF5935 /* Assets.xcassets in Resources */,
@@ -603,15 +630,20 @@
 				00E5194C1FC4ECBE00EF5935 /* Toast+Extensions.swift in Sources */,
 				00FC1AFC1FD0237B00F2F201 /* CalorieEntry.swift in Sources */,
 				00F81F6A1FCF056D0007B4A3 /* AccountManager.swift in Sources */,
+				00FC1B0B1FD0E0A200F2F201 /* Cells+reuseId.swift in Sources */,
 				00E519371FC4D8CF00EF5935 /* Logger.swift in Sources */,
 				00E5195F1FC5AC1500EF5935 /* BaseNIBView.swift in Sources */,
 				00E519261FC4D84E00EF5935 /* RequestError.swift in Sources */,
+				00FC1B071FD0E00500F2F201 /* DataSource.swift in Sources */,
+				00FC1B091FD0E06E00F2F201 /* UITableView+dequeue.swift in Sources */,
 				00E519321FC4D89D00EF5935 /* AutoLoginRequest.swift in Sources */,
+				00FC1B051FD0DF2800F2F201 /* UserListTableViewCell.swift in Sources */,
 				00F77DDE1FCDD5C800C5AB32 /* UsersEndpoint.swift in Sources */,
 				00E5194A1FC4EC6900EF5935 /* Constants.swift in Sources */,
 				00E519611FC5AC3200EF5935 /* UIView+embedInSuperview.swift in Sources */,
 				00E519541FC58DF900EF5935 /* User.swift in Sources */,
 				00FC1AF81FD01E2800F2F201 /* CaloriesFilterView.swift in Sources */,
+				00FC1B011FD0DEAD00F2F201 /* UserListViewController.swift in Sources */,
 				00F77DDC1FCDD5C800C5AB32 /* AuthEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

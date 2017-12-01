@@ -23,6 +23,10 @@ struct User: Codable {
     let calorieTarget: Int?
     var role: Role
     
+    var fullName: String {
+        return "\(firstName) \(lastName)"
+    }
+    
     init(id: Int,
          firstName: String,
          lastName: String,

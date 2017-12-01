@@ -22,7 +22,7 @@ class DashboardViewController: UIViewController, StoryboardController {
     fileprivate var currentUser: User!
     fileprivate var source: DashboardSource = .calorie
     
-    fileprivate var usersController: UIViewController!
+    fileprivate var usersController: UserListViewController!
     fileprivate var caloriesController: CaloriesListViewController!
     fileprivate var accountManager: AccountManager!
     
@@ -32,7 +32,7 @@ class DashboardViewController: UIViewController, StoryboardController {
         let vc = DashboardViewController.instantiate()
         vc.currentUser = user
         vc.accountManager = accountManager
-        vc.usersController = UIViewController()
+        vc.usersController = UserListViewController.instantiate(currentUser: user)
         vc.caloriesController = CaloriesListViewController.instantiate()
         
         return vc

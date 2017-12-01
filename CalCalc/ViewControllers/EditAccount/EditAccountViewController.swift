@@ -125,14 +125,14 @@ class EditAccountViewController: UIViewController, StoryboardController {
                 }
             }
         } else if case .editUser = mode! {
-            guard let password = passwordTextField.text, password != "" else {
-                view.makeToastError("You must provide a password")
-                passwordTextField.setValid(.invalid)
-                return
+            let newPassword: String?
+            if let password = passwordTextField.text, password != "" {
+                newPassword = password
+            } else {
+                newPassword = nil
             }
-            passwordTextField.setValid(.valid)
             
-            usersRequests.update(user: user, withPassword: password) { result in
+            usersRequests.update(user: user, withPassword: newPassword) { result in
                 switch result {
                 case .failure(let error):
                     setUpdateFailHandler(error)
