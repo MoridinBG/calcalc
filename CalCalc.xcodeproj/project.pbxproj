@@ -260,7 +260,6 @@
 		00E519381FC4DB9200EF5935 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				00FC1AF11FD01AD800F2F201 /* CaloriesList */,
 				00FC1AEC1FCF648600F2F201 /* Dashboard */,
 				00E5194D1FC5899F00EF5935 /* EditAccount */,
 				00E5193E1FC4E54600EF5935 /* SignIn */,
@@ -351,6 +350,7 @@
 		00FC1AEC1FCF648600F2F201 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				00FC1AF11FD01AD800F2F201 /* CaloriesList */,
 				00FC1AED1FCF64A400F2F201 /* DashboardViewController.swift */,
 				00FC1AEF1FCF65EB00F2F201 /* DashboardViewController.storyboard */,
 			);
