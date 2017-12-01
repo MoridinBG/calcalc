@@ -9,7 +9,9 @@
 import Foundation
 
 struct CalorieEntry {
+    let id: Int?
+    
     let date: Date
-    let text: String
+    let description: String
     let calories: Int
 }

@@ -296,14 +296,12 @@ extension EditAccountViewController {
         
         let role = User.Role(rawValue: roleTextField.text?.lowercased() ?? "") ?? .user
         
-        let user = User(id: id,
-                        firstName: firstName,
-                        lastName: lastName,
-                        email: email,
-                        calorieTarget: calorieTarget,
-                        role: role)
-        
-        return user
+        return User(id: id,
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    calorieTarget: calorieTarget,
+                    role: role)
     }
     
     private func setupUI() {

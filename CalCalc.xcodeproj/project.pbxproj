@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		008B7B4C1FD147F4000230E9 /* PickerSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008B7B4B1FD147F4000230E9 /* PickerSheetView.swift */; };
+		008B7B4E1FD1480D000230E9 /* DatePickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008B7B4D1FD1480D000230E9 /* DatePickerSheet.swift */; };
 		00E518D91FC4BFAF00EF5935 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E518D81FC4BFAF00EF5935 /* AppDelegate.swift */; };
 		00E518E01FC4BFAF00EF5935 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00E518DF1FC4BFAF00EF5935 /* Assets.xcassets */; };
 		00E518E31FC4BFAF00EF5935 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E518E11FC4BFAF00EF5935 /* LaunchScreen.storyboard */; };
@@ -62,6 +64,8 @@
 		00FC1B071FD0E00500F2F201 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FC1B061FD0E00500F2F201 /* DataSource.swift */; };
 		00FC1B091FD0E06E00F2F201 /* UITableView+dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FC1B081FD0E06E00F2F201 /* UITableView+dequeue.swift */; };
 		00FC1B0B1FD0E0A200F2F201 /* Cells+reuseId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FC1B0A1FD0E0A200F2F201 /* Cells+reuseId.swift */; };
+		00FC1B0E1FD13BB900F2F201 /* EditCalorieEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FC1B0D1FD13BB900F2F201 /* EditCalorieEntryViewController.swift */; };
+		00FC1B101FD13BCF00F2F201 /* EditCalorieEntryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FC1B0F1FD13BCF00F2F201 /* EditCalorieEntryViewController.storyboard */; };
 		BEA01845848515890A55A9D8 /* Pods_CalCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +80,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		008B7B4B1FD147F4000230E9 /* PickerSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSheetView.swift; sourceTree = "<group>"; };
+		008B7B4D1FD1480D000230E9 /* DatePickerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerSheet.swift; sourceTree = "<group>"; };
 		00E518D51FC4BFAF00EF5935 /* CalCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E518D81FC4BFAF00EF5935 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00E518DF1FC4BFAF00EF5935 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,6 +141,8 @@
 		00FC1B061FD0E00500F2F201 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		00FC1B081FD0E06E00F2F201 /* UITableView+dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+dequeue.swift"; sourceTree = "<group>"; };
 		00FC1B0A1FD0E0A200F2F201 /* Cells+reuseId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cells+reuseId.swift"; sourceTree = "<group>"; };
+		00FC1B0D1FD13BB900F2F201 /* EditCalorieEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCalorieEntryViewController.swift; sourceTree = "<group>"; };
+		00FC1B0F1FD13BCF00F2F201 /* EditCalorieEntryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditCalorieEntryViewController.storyboard; sourceTree = "<group>"; };
 		187530A7C4FB594136A77DC3 /* Pods-CalCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.debug.xcconfig"; sourceTree = "<group>"; };
 		667BE62870BFF463BCD8E687 /* Pods_CalCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9ADC66898E21AEFACF8637 /* Pods-CalCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalCalc.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalCalc/Pods-CalCalc.release.xcconfig"; sourceTree = "<group>"; };
@@ -332,6 +340,8 @@
 				00E5195A1FC5AAE100EF5935 /* ValidatedTextfield.swift */,
 				00E5195C1FC5AAEA00EF5935 /* ValidatedTextfield.xib */,
 				00E5195E1FC5AC1500EF5935 /* BaseNIBView.swift */,
+				008B7B4B1FD147F4000230E9 /* PickerSheetView.swift */,
+				008B7B4D1FD1480D000230E9 /* DatePickerSheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -377,6 +387,7 @@
 		00FC1AF11FD01AD800F2F201 /* CaloriesList */ = {
 			isa = PBXGroup;
 			children = (
+				00FC1B0C1FD13B9600F2F201 /* NewCalorieEntry */,
 				00FC1AF61FD01E1000F2F201 /* CaloriesFilterView */,
 				00FC1AF21FD01AF200F2F201 /* CaloriesListViewController.swift */,
 				00FC1AF41FD01AFB00F2F201 /* CaloriesListViewController.storyboard */,
@@ -401,6 +412,15 @@
 				00FC1B041FD0DF2800F2F201 /* UserListTableViewCell.swift */,
 			);
 			path = UserList;
+			sourceTree = "<group>";
+		};
+		00FC1B0C1FD13B9600F2F201 /* NewCalorieEntry */ = {
+			isa = PBXGroup;
+			children = (
+				00FC1B0D1FD13BB900F2F201 /* EditCalorieEntryViewController.swift */,
+				00FC1B0F1FD13BCF00F2F201 /* EditCalorieEntryViewController.storyboard */,
+			);
+			path = NewCalorieEntry;
 			sourceTree = "<group>";
 		};
 		69FC2274CF101CA4A28E3F9F /* Pods */ = {
@@ -511,6 +531,7 @@
 				00FC1AFA1FD01E3400F2F201 /* CaloriesFilterView.xib in Resources */,
 				00FC1AF51FD01AFB00F2F201 /* CaloriesListViewController.storyboard in Resources */,
 				00E5194F1FC589B300EF5935 /* EditAccountViewController.storyboard in Resources */,
+				00FC1B101FD13BCF00F2F201 /* EditCalorieEntryViewController.storyboard in Resources */,
 				00FC1B031FD0DEC000F2F201 /* UserListViewController.storyboard in Resources */,
 				00E519421FC4E56C00EF5935 /* SignInViewController.storyboard in Resources */,
 				00E518E31FC4BFAF00EF5935 /* LaunchScreen.storyboard in Resources */,
@@ -630,12 +651,14 @@
 				00E5194C1FC4ECBE00EF5935 /* Toast+Extensions.swift in Sources */,
 				00FC1AFC1FD0237B00F2F201 /* CalorieEntry.swift in Sources */,
 				00F81F6A1FCF056D0007B4A3 /* AccountManager.swift in Sources */,
+				00FC1B0E1FD13BB900F2F201 /* EditCalorieEntryViewController.swift in Sources */,
 				00FC1B0B1FD0E0A200F2F201 /* Cells+reuseId.swift in Sources */,
 				00E519371FC4D8CF00EF5935 /* Logger.swift in Sources */,
 				00E5195F1FC5AC1500EF5935 /* BaseNIBView.swift in Sources */,
 				00E519261FC4D84E00EF5935 /* RequestError.swift in Sources */,
 				00FC1B071FD0E00500F2F201 /* DataSource.swift in Sources */,
 				00FC1B091FD0E06E00F2F201 /* UITableView+dequeue.swift in Sources */,
+				008B7B4E1FD1480D000230E9 /* DatePickerSheet.swift in Sources */,
 				00E519321FC4D89D00EF5935 /* AutoLoginRequest.swift in Sources */,
 				00FC1B051FD0DF2800F2F201 /* UserListTableViewCell.swift in Sources */,
 				00F77DDE1FCDD5C800C5AB32 /* UsersEndpoint.swift in Sources */,
@@ -643,6 +666,7 @@
 				00E519611FC5AC3200EF5935 /* UIView+embedInSuperview.swift in Sources */,
 				00E519541FC58DF900EF5935 /* User.swift in Sources */,
 				00FC1AF81FD01E2800F2F201 /* CaloriesFilterView.swift in Sources */,
+				008B7B4C1FD147F4000230E9 /* PickerSheetView.swift in Sources */,
 				00FC1B011FD0DEAD00F2F201 /* UserListViewController.swift in Sources */,
 				00F77DDC1FCDD5C800C5AB32 /* AuthEndpoint.swift in Sources */,
 			);

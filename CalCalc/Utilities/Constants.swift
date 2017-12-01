@@ -30,18 +30,21 @@ struct Constants {
     struct DateFormatters {
         static var shortDate: DateFormatter = {
             let formatter = DateFormatter()
+            formatter.timeZone = TimeZone(secondsFromGMT: 0) // Avoid adjusting time
             formatter.dateStyle = .short
             return formatter
         }()
         
         static var mediumDate: DateFormatter = {
             let formatter = DateFormatter()
+            formatter.timeZone = TimeZone(secondsFromGMT: 0) // Avoid adjusting time
             formatter.dateStyle = .medium
             return formatter
         }()
         
         static var shortTime: DateFormatter = {
             let formatter = DateFormatter()
+            formatter.timeZone = TimeZone(secondsFromGMT: 0) // Avoid adjusting time
             formatter.timeStyle = .short
             return formatter
         }()
@@ -50,6 +53,13 @@ struct Constants {
             let formatter = DateFormatter()
             formatter.timeZone = TimeZone(secondsFromGMT: 0) // Avoid adjusting time
             formatter.dateFormat = "yyyy-MM-dd"
+            return formatter
+        }()
+        
+        static var dateTime: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.timeZone = TimeZone(secondsFromGMT: 0) // Avoid adjusting time
+            formatter.dateFormat = "yyyy-MM-dd hh:mm"
             return formatter
         }()
     }
