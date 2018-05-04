@@ -50,7 +50,7 @@ extension Endpoint {
 }
 
 extension Endpoint {
-    fileprivate func query(_ parameters: [String: Any]) -> String {
+    private func query(_ parameters: [String: Any]) -> String {
         var components: [(String, String)] = []
 
         for key in parameters.keys.sorted(by: <) {
@@ -67,7 +67,7 @@ extension Endpoint {
     /// - parameter value: The value of the query component.
     ///
     /// - returns: The percent-escaped, URL encoded query string components.
-    fileprivate func queryComponents(fromKey key: String, value: Any) -> [(String, String)] {
+    private func queryComponents(fromKey key: String, value: Any) -> [(String, String)] {
         var components: [(String, String)] = []
 
         if let dictionary = value as? [String: Any] {
@@ -107,7 +107,7 @@ extension Endpoint {
     /// - parameter string: The string to be percent-escaped.
     ///
     /// - returns: The percent-escaped string.
-    fileprivate func escape(_ string: String) -> String {
+    private func escape(_ string: String) -> String {
         let generalDelimitersToEncode = ":#[]@" // does not include "?" or "/" due to RFC 3986 - Section 3.4
         let subDelimitersToEncode = "!$&'()*+,;="
 

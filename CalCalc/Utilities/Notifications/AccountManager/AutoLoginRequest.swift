@@ -12,7 +12,7 @@ extension Notifications.AccountManager {
     struct AutoLoginRequest: TypedNotification {
         static let notificationName = "accountManager.autologinRequest"
         
-        fileprivate struct Keys {
+        private struct Keys {
             static let tokenExpired = "tokenExpired"
         }
         

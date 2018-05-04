@@ -14,17 +14,17 @@ class DashboardViewController: UIViewController, StoryboardController {
         case users
     }
     
-    @IBOutlet fileprivate var reportButton: UIBarButtonItem!
-    @IBOutlet fileprivate var addButton: UIBarButtonItem!
-    @IBOutlet fileprivate var dashboardTypeSegment: UISegmentedControl!
-    @IBOutlet fileprivate var containerView: UIView!
+    @IBOutlet private var reportButton: UIBarButtonItem!
+    @IBOutlet private var addButton: UIBarButtonItem!
+    @IBOutlet private var dashboardTypeSegment: UISegmentedControl!
+    @IBOutlet private var containerView: UIView!
     
-    fileprivate var currentUser: User!
-    fileprivate var source: DashboardSource = .calorie
+    private var currentUser: User!
+    private var source: DashboardSource = .calorie
     
-    fileprivate var usersController: UserListViewController!
-    fileprivate var caloriesController: CaloriesListViewController!
-    fileprivate var accountManager: AccountManager!
+    private var usersController: UserListViewController!
+    private var caloriesController: CaloriesListViewController!
+    private var accountManager: AccountManager!
     
     static func initialize(user: User,
                            accountManager: AccountManager = AccountManager()) -> DashboardViewController {
@@ -106,7 +106,7 @@ class DashboardViewController: UIViewController, StoryboardController {
 }
 
 extension DashboardViewController {
-    fileprivate func setupUI() {
+    private func setupUI() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.setNavigationBarHidden(false, animated: true)
         

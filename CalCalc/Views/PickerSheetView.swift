@@ -55,7 +55,7 @@ class PickerSheetView: UIView {
         container.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
-    @objc fileprivate func done() {
+    @objc private func done() {
         onDone?()
     }
 }

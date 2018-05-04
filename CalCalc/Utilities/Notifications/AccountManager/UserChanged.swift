@@ -13,7 +13,7 @@ extension Notifications.AccountManager {
 
         static let notificationName = "accountManager.userChanged"
 
-        fileprivate struct Keys {
+        private struct Keys {
             static let user = "user"
             static let loggedOut = "loggedOut"
             static let rebuildUI = "rebuildUI"

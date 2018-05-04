@@ -12,7 +12,7 @@ import Result
 extension URLSessionTask: NetworkRequest {}
 
 class URLSessionNetworkProvider: NetworkProvider {
-    fileprivate let session: URLSession
+    private let session: URLSession
 
     init(configuration: URLSessionConfiguration = .default) {
         self.session = URLSession(configuration: configuration)

@@ -25,7 +25,7 @@ enum RequestError: Error {
         case .statusCode(_, let message): errorMessage = message
         case .requestFailure(let message): errorMessage = message
         case .badResponse(let message): errorMessage = message
-        case .serverError(let errors): errorMessage = errors.flatMap({ $0.reason }).joined(separator: ". ")
+        case .serverError(let errors): errorMessage = errors.compactMap({ $0.reason }).joined(separator: ". ")
         case .cancelled: errorMessage = "Cancelled"
 
         case .noConnection: errorMessage = "Connection to server failed"

@@ -17,8 +17,8 @@ class ValidatedTextfield: BaseNIBView {
     }
     
     @IBOutlet var textField: FormTextField!
-    @IBOutlet fileprivate var validationIcon: ValidationIndicator!
-    @IBOutlet fileprivate var validationHiddenConstraint: NSLayoutConstraint!
+    @IBOutlet private var validationIcon: ValidationIndicator!
+    @IBOutlet private var validationHiddenConstraint: NSLayoutConstraint!
     @IBOutlet var textfieldToIcon: NSLayoutConstraint!
     
     var text: String? {

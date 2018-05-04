@@ -44,7 +44,7 @@ class EditCalorieEntryViewController: UIViewController, StoryboardController {
     private var allUsers: [User]?
     private var onEntrySaved: ((CalorieEntry) -> ())?
     
-    fileprivate lazy var datePicker: DatePickerSheet = {
+    private lazy var datePicker: DatePickerSheet = {
         let picker = DatePickerSheet()
         picker.datePicker.datePickerMode = .dateAndTime
         picker.datePicker.addTarget(self, action: #selector(self.dateChanged), for: .valueChanged)
@@ -83,7 +83,7 @@ class EditCalorieEntryViewController: UIViewController, StoryboardController {
     }
     
     @IBAction private func acceptPressed() {
-        guard let newEntry = buildEntry() else { return }
+        guard let _ = buildEntry() else { return }
         
         switch mode! {
         case .newEntry:
@@ -93,7 +93,7 @@ class EditCalorieEntryViewController: UIViewController, StoryboardController {
                 // TODO: Create entry for self
             }
             
-        case .editEntry(let entry):
+        case .editEntry:
             break;
             // TODO: Update entry
             
@@ -153,7 +153,7 @@ class EditCalorieEntryViewController: UIViewController, StoryboardController {
         present(sheet, animated: true, completion: nil)
     }
     
-    @objc fileprivate func dateChanged(picker: UIDatePicker) {
+    @objc private func dateChanged(picker: UIDatePicker) {
         dateTextField.text = Constants.DateFormatters.dateTime.string(from: picker.date)
     }
 }

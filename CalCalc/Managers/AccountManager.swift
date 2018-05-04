@@ -10,7 +10,7 @@ import Foundation
 import KeychainAccess
 import Result
 
-fileprivate struct KeychainKeys {
+private struct KeychainKeys {
     static let Service = "LogJog"
 
     static let Password = "LogJogPassword"
@@ -54,7 +54,7 @@ class AccountManager {
 
     var refreshTokenObserver: NSObjectProtocol? = nil
 
-    fileprivate var isLoginInProgress = false
+    private var isLoginInProgress = false
 
 
     //**********
@@ -193,7 +193,7 @@ class AccountManager {
     // MARK: - Login
     //**********
 
-    fileprivate enum LoginMethod {
+    private enum LoginMethod {
         case usernamePass(username: String, password: String)
     }
 
@@ -239,7 +239,7 @@ class AccountManager {
     /// - parameter loginMethod: LoginMethod - Facebook, User & Pass or Refresh Token
     /// - parameter onSuccess:     Returns the logged in user with the basic properties fetched
     /// - parameter onFailure:     Any error that has occured
-    fileprivate func login(with loginMethod: LoginMethod,
+    private func login(with loginMethod: LoginMethod,
                            handler: ((Result<User, RequestError>) -> ())?) {
 
         guard isLoginInProgress == false else {
@@ -301,7 +301,7 @@ class AccountManager {
     }
     
     // This is THE method to call after successfull login
-    fileprivate func loadCurrentUserOnLoginSuccess(handler: ((Result<User, RequestError>) -> ())?) {
+    private func loadCurrentUserOnLoginSuccess(handler: ((Result<User, RequestError>) -> ())?) {
         usersRequests.getCurrent() { result in
             handler?(result.mapError({ error in
                 self.notifyNewAccessToken(nil) // Something went wrong. Soft logout without deleting stored credentials
@@ -311,14 +311,14 @@ class AccountManager {
     }
     
     
-    fileprivate func removeUserAndPassFromKeychain () {
+    private func removeUserAndPassFromKeychain () {
         keychain[KeychainKeys.AccessToken] = nil
 
         keychain[KeychainKeys.Username] = nil
         keychain[KeychainKeys.Password] = nil
     }
     
-    fileprivate func notifyNewAccessToken(_ accessToken: String?) {
+    private func notifyNewAccessToken(_ accessToken: String?) {
         log.info("Token updated")
         let tokenNotification = Notifications.Networking.AuthTokenUpdated(accessToken: accessToken)
         notificationCenter.postTypedNotification(tokenNotification)

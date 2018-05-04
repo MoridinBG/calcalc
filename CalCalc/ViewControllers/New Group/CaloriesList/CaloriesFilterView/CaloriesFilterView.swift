@@ -85,7 +85,7 @@ class CaloriesFilterView: BaseNIBView {
 }
 
 extension CaloriesFilterView {
-    fileprivate func readjustSliderLimits(slider: NMRangeSlider) {
+    private func readjustSliderLimits(slider: NMRangeSlider) {
         if slider.lowerValue < slider.minimumValue { slider.lowerValue = slider.minimumValue }
         if slider.lowerValue > slider.maximumValue { slider.lowerValue = slider.maximumValue }
         

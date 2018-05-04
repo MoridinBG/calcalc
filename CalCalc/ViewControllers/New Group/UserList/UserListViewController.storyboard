@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,7 +14,7 @@
         <!--User List View Controller-->
         <scene sceneID="kMs-ah-chE">
             <objects>
-                <viewController storyboardIdentifier="UserListViewController" id="ilF-I4-uBV" customClass="UserListViewController" customModule="LogJog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserListViewController" id="ilF-I4-uBV" customClass="UserListViewController" customModule="Toptal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nQq-nq-ju7"/>
                         <viewControllerLayoutGuide type="bottom" id="f8H-n0-i1q"/>
@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserListTableViewCell" rowHeight="40" id="YUd-zN-sbL" customClass="UserListTableViewCell" customModule="CalCalc" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserListTableViewCell" rowHeight="40" id="YUd-zN-sbL" customClass="UserListTableViewCell" customModule="Toptal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YUd-zN-sbL" id="xLT-Jn-ITU">
@@ -62,8 +62,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6pQ-IW-cg2" firstAttribute="leading" secondItem="DF6-zR-dyh" secondAttribute="leading" id="5Bh-H1-Q2j"/>
-                            <constraint firstItem="f8H-n0-i1q" firstAttribute="top" secondItem="6pQ-IW-cg2" secondAttribute="bottom" id="69b-38-k9n"/>
-                            <constraint firstItem="6pQ-IW-cg2" firstAttribute="top" secondItem="nQq-nq-ju7" secondAttribute="bottom" id="gel-mi-lUX"/>
+                            <constraint firstItem="kDq-jG-ID1" firstAttribute="bottom" secondItem="6pQ-IW-cg2" secondAttribute="bottom" id="69b-38-k9n"/>
+                            <constraint firstItem="6pQ-IW-cg2" firstAttribute="top" secondItem="kDq-jG-ID1" secondAttribute="top" id="gel-mi-lUX"/>
                             <constraint firstAttribute="trailing" secondItem="6pQ-IW-cg2" secondAttribute="trailing" id="h2M-vK-NVg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kDq-jG-ID1"/>

@@ -10,11 +10,11 @@ import UIKit
 
 class UserListViewController: UIViewController, StoryboardController {
     
-    @IBOutlet fileprivate var tableView: UITableView!
+    @IBOutlet private var tableView: UITableView!
     
-    fileprivate var currentUser: User!
+    private var currentUser: User!
     
-    fileprivate var dataSource: DataSourceState<User> = .loaded([]) {
+    private var dataSource: DataSourceState<User> = .loaded([]) {
         didSet {
             switch dataSource {
             case .loading:
@@ -29,12 +29,12 @@ class UserListViewController: UIViewController, StoryboardController {
             }
         }
     }
-    fileprivate var usersRequests: UsersRequests!
+    private var userRequests: UsersRequests!
     
-    static func instantiate(currentUser: User, usersRequests: UsersRequests = DefaultUsersRequests()) -> UserListViewController {
+    static func instantiate(currentUser: User, userRequests: UsersRequests = DefaultUsersRequests()) -> UserListViewController {
         
         let vc = UserListViewController.instantiate()
-        vc.usersRequests = usersRequests
+        vc.userRequests = userRequests
         vc.currentUser = currentUser
         
         return vc
@@ -51,7 +51,7 @@ class UserListViewController: UIViewController, StoryboardController {
         super.viewWillAppear(animated)
         
         dataSource = .loading
-        usersRequests.getAll { result in
+        userRequests.getAll { result in
             switch result {
             case .failure(let error):
                 self.dataSource = .error(error.errorMessage)
@@ -99,6 +99,18 @@ extension UserListViewController: UITableViewDataSource {
 
 extension UserListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        guard case .loaded(let users) = dataSource, indexPath.row < users.count else { return false }
+        guard currentUser.role != .user else { return false }
+        guard users[indexPath.row].id != currentUser.id else { return false}
+        
+        if users[indexPath.row].role == .admin {
+            if currentUser.role == .manager {
+                return false
+            } else if currentUser.role == .admin && users.filter({ $0.role == .admin }).count < 2 {
+                return false
+            }
+        }
+        
         return true
     }
     
@@ -107,7 +119,7 @@ extension UserListViewController: UITableViewDelegate {
         guard editingStyle == .delete else { return }
         
         self.view.makeToastActivity()
-        usersRequests.delete(user: users[indexPath.row]) { result in
+        userRequests.delete(user: users[indexPath.row]) { result in
             self.view.hideToastActivity()
             switch result {
             case .failure(let error):

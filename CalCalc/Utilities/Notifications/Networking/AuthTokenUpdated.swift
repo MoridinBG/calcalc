@@ -12,7 +12,7 @@ extension Notifications.Networking {
     struct AuthTokenUpdated: TypedNotification {
         static let notificationName = "networking.authTokenUpdated"
         
-        fileprivate struct Keys {
+        private struct Keys {
             static let accessToken = "accessToken"
         }
         

@@ -10,8 +10,8 @@ import UIKit
 
 class SignInViewController: UIViewController, StoryboardController {
 
-    @IBOutlet fileprivate var emailTextField: ValidatedTextfield!
-    @IBOutlet fileprivate var passwordTextField: ValidatedTextfield!
+    @IBOutlet private var emailTextField: ValidatedTextfield!
+    @IBOutlet private var passwordTextField: ValidatedTextfield!
     
     
     private var authRequests: AuthRequests = DefaultAuthRequests()
@@ -111,7 +111,7 @@ class SignInViewController: UIViewController, StoryboardController {
 }
 
 extension SignInViewController {
-    fileprivate func logInUser(user: User) {
+    private func logInUser(user: User) {
         let vc = DashboardViewController.initialize(user: user)
         let navVC = UINavigationController(rootViewController: vc)
         present(navVC, animated: true, completion: nil)

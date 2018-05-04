@@ -15,7 +15,7 @@ protocol AuthRequests {
 }
 
 struct DefaultAuthRequests: AuthRequests {
-    fileprivate let network: Network
+    private let network: Network
 
     init(network: Network = DefaultNetwork.shared) {
         self.network = network

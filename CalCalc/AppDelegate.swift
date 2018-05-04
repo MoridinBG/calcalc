@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
-    fileprivate func setupUI() {
+    private func setupUI() {
         setupToast()
         
         UINavigationBar.appearance().backIndicatorImage = UIImage(named: "BackBlackIcon")
@@ -68,7 +68,7 @@ extension AppDelegate {
         window?.rootViewController = navVC
     }
     
-    fileprivate func setupToast() {
+    private func setupToast() {
         var style = ToastStyle()
         style.backgroundColor = Constants.UI.Colors.mainGreen
         style.messageColor = UIColor.white

@@ -18,15 +18,15 @@ protocol Network {
 }
 
 class DefaultNetwork: Network {
-    fileprivate var authHeader: [String : String]?
-    fileprivate var tokenChangedObserver: NSObjectProtocol?
+    private var authHeader: [String : String]?
+    private var tokenChangedObserver: NSObjectProtocol?
 
-    fileprivate let lock = NSLock()
-    fileprivate var isUpdatingToken: Bool = false
-    fileprivate var enqueuedRequests: [(Endpoint, handler: ((Result<Data, RequestError>) -> ())?)] = []
+    private let lock = NSLock()
+    private var isUpdatingToken: Bool = false
+    private var enqueuedRequests: [(Endpoint, handler: ((Result<Data, RequestError>) -> ())?)] = []
 
-    fileprivate let provider: NetworkProvider
-    fileprivate let notificationCenter: NotificationCenter
+    private let provider: NetworkProvider
+    private let notificationCenter: NotificationCenter
 
     static let shared = DefaultNetwork()
 
@@ -179,7 +179,7 @@ class DefaultNetwork: Network {
 
 extension DefaultNetwork
 {
-    fileprivate func handle(error: NetworkProviderError, forPath path: String) -> RequestError {
+    private func handle(error: NetworkProviderError, forPath path: String) -> RequestError {
         switch error {
         case .error(let error):
             netLog.error("\(path) failed. Error sending request to server: \(error.localizedDescription)")

@@ -9,7 +9,7 @@
 import UIKit
 
 class UserListTableViewCell: UITableViewCell {
-    @IBOutlet fileprivate var nameLabel: UILabel!
+    @IBOutlet private var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -15,7 +15,7 @@ extension UIView {
 }
 
 class BaseNIBView: UIView {
-    fileprivate(set) var view: UIView!
+    private(set) var view: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,7 +35,7 @@ class BaseNIBView: UIView {
 }
 
 extension BaseNIBView {
-    fileprivate func loadViewFromNib() -> UIView {
+    private func loadViewFromNib() -> UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: self.nibName, bundle: bundle)
         let nibView = nib.instantiate(withOwner: self, options: nil).first as! UIView
